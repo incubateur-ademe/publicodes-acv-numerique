@@ -37,14 +37,11 @@ fichier . transmission . réseau:
     mobile EU:
       titre: Réseau mobile en Europe
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR
-        - mobile FR
-        - fixe EU
-        - mobile EU
+  une possibilité:
+    - fixe FR
+    - mobile FR
+    - fixe EU
+    - mobile EU
   par défaut: "'fixe FR'"
 
 fichier . data center:

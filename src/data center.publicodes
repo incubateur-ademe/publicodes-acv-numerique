@@ -93,7 +93,7 @@ construction data center:
 construction data center . serveur:
   formule: facteur d'allocation * serveur . construction
   unité: gCO2e
-  
+
 construction data center . serveur . facteur d'allocation:
   formule: 0
   note: A remplacer dans le recalcul
@@ -117,7 +117,7 @@ construction data center . switch . facteur d'allocation:
 construction data center . routeur:
   formule: facteur d'allocation * routeur . construction
   unité: gCO2e
-  
+
 construction data center . routeur . facteur d'allocation:
   formule: 0.286 * serveur . facteur d'allocation
   référence: considérant 0,286 routeurs par serveur (données APL Datacenter basées sur une moyenne du marché)
@@ -157,14 +157,11 @@ usage data center . région:
     Chine:
     USA:
   question: Dans quelle zone géographique se situe le data center ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - France
-        - Europe
-        - Chine
-        - USA
+  une possibilité:
+    - France
+    - Europe
+    - Chine
+    - USA
   par défaut: "'France'"
 
 usage data center . facteur électricité:

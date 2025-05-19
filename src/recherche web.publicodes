@@ -108,14 +108,11 @@ recherche web . appareil:
     tablette:
     smartphone:
   question: Quel appareil utlisez-vous ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - ordinateur et écran
-        - ordinateur portable
-        - tablette
-        - smartphone
+  une possibilité:
+    - ordinateur et écran
+    - ordinateur portable
+    - tablette
+    - smartphone
   par défaut: "'moyenne'" #default value has to be set to make sure rules using "appareil" are defined
 
 recherche web . appareil . moyenne utilisation ordinateur et écran: 24%
@@ -160,14 +157,11 @@ recherche web . transmission . réseau:
     mobile EU:
       titre: Réseau mobile en Europe
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR
-        - mobile FR
-        - fixe EU
-        - mobile EU
+  une possibilité:
+    - fixe FR
+    - mobile FR
+    - fixe EU
+    - mobile EU
   par défaut: "'fixe FR'"
 
 recherche web . data center:

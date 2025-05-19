@@ -90,15 +90,13 @@ email . appareil:
     tablette:
     smartphone:
   question: Quel appareil utlisez-vous ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - ordinateur et écran
-        - ordinateur portable
-        - tablette
-        - smartphone
-  par défaut: "'moyenne'" #default value has to be set to make sure rules using "appareil" are defined
+  une possibilité:
+    - ordinateur et écran
+    - ordinateur portable
+    - tablette
+    - smartphone
+  par défaut: "'moyenne'"
+  # default value has to be set to make sure rules using "appareil" are defined
 
 email . appareil . moyenne utilisation ordinateur et écran: 24%
 email . appareil . moyenne utilisation ordinateur portable: 24%
@@ -174,14 +172,11 @@ email . transmission . émetteur . réseau:
     mobile EU:
       titre: Réseau mobile en Europe
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR
-        - mobile FR
-        - fixe EU
-        - mobile EU
+  une possibilité:
+    - fixe FR
+    - mobile FR
+    - fixe EU
+    - mobile EU
   par défaut: "'fixe FR'"
 
 email . transmission . récepteur:
@@ -203,14 +198,11 @@ email . transmission . récepteur . réseau:
     mobile EU:
       titre: Réseau mobile en Europe
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR
-        - mobile FR
-        - fixe EU
-        - mobile EU
+  une possibilité:
+    - fixe FR
+    - mobile FR
+    - fixe EU
+    - mobile EU
   par défaut: "'fixe FR'"
 
 email . transmission . redondances sauvegarde:
@@ -235,12 +227,9 @@ email . transmission . redondances sauvegarde . réseau:
     fixe FR hors box:
     fixe EU hors box:
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR hors box
-        - fixe EU hors box
+  une possibilité:
+    - fixe FR hors box
+    - fixe EU hors box
   par défaut: "'fixe FR hors box'"
 
 email . data center:

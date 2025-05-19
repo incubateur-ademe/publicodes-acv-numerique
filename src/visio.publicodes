@@ -19,14 +19,11 @@ visio . qualité:
       titre: 4K
   titre: qualité de la vidéo
   question: Quelle est la qualité de la vidéo ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - audio
-        - SD
-        - HD
-        - ultra HD
+  une possibilité:
+    - audio
+    - SD
+    - HD
+    - ultra HD
   par défaut: "'SD'"
 
 visio . qualité . facteur qualité:
@@ -93,16 +90,13 @@ visio . appareil:
     smartphone:
     TV:
   question: Quel appareil utlisez-vous ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - ordinateur et écran
-        - ordinateur portable
-        - tablette
-        - smartphone
-        - TV
-    par défaut: "'moyenne'" # default value has to be set to make sure rules using "appareil" are defined
+  une possibilité:
+    - ordinateur et écran
+    - ordinateur portable
+    - tablette
+    - smartphone
+    - TV
+  par défaut: "'moyenne'" # default value has to be set to make sure rules using "appareil" are defined
 
 visio . appareil . moyenne utilisation ordinateur et écran: 0%
 visio . appareil . moyenne utilisation ordinateur portable: 100%
@@ -140,14 +134,11 @@ visio . transmission . réseau:
     mobile EU:
       titre: Réseau mobile en Europe
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR
-        - mobile FR
-        - fixe EU
-        - mobile EU
+  une possibilité:
+    - fixe FR
+    - mobile FR
+    - fixe EU
+    - mobile EU
   par défaut: "'fixe FR'"
 
 visio . data center:

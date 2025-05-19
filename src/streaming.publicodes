@@ -18,13 +18,10 @@ streaming . qualité:
     ultra HD:
       titre: 4K
   question: Quelle est la qualité de la vidéo ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - SD
-        - HD
-        - ultra HD
+  une possibilité:
+    - SD
+    - HD
+    - ultra HD
   par défaut: "'HD'"
 
 streaming . qualité . facteur qualité:
@@ -82,16 +79,13 @@ streaming . appareil:
     smartphone:
     TV:
   question: Quel appareil utlisez-vous ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - ordinateur et écran
-        - ordinateur portable
-        - tablette
-        - smartphone
-        - TV
-    par défaut: "'moyenne'" # default value has to be set to make sure rules using "appareil" are defined
+  une possibilité:
+    - ordinateur et écran
+    - ordinateur portable
+    - tablette
+    - smartphone
+    - TV
+  par défaut: "'moyenne'" # default value has to be set to make sure rules using "appareil" are defined
 
 streaming . appareil . moyenne utilisation ordinateur et écran: 0%
 streaming . appareil . moyenne utilisation ordinateur portable: 15%
@@ -129,14 +123,11 @@ streaming . transmission . réseau:
     mobile EU:
       titre: Réseau mobile en Europe
   question: Utilisez-vous le réseau fixe ou mobile ?
-  formule:
-    une possibilité:
-      choix obligatoire: oui
-      possibilités:
-        - fixe FR
-        - mobile FR
-        - fixe EU
-        - mobile EU
+  une possibilité:
+    - fixe FR
+    - mobile FR
+    - fixe EU
+    - mobile EU
   par défaut: "'fixe FR'"
 
 streaming . data center:
