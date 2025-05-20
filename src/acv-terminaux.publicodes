@@ -5,27 +5,27 @@ acv:
 
 acv . smartphone:
   description: |
-    6,63 inches screen mix of LCD and OLED technologies, 8 GB RAM, 210 GB memory (mix pondéré entre 3 configurations, 24%,24%, 52%)
+    6,61 inches screen mix of LCD and OLED technologies, 7,3 GB RAM, 180 GB memory, 2,5 years lifespan
 acv . smartphone . carbone:
 acv . smartphone . eau:
 
 acv . smartphone . carbone . fabrication:
-  formule: 83000
+  formule: 77000
   unité: gCO2e
 acv . smartphone . eau . fabrication:
-  formule: 76000
+  formule: 75100
   unité: l
 acv . smartphone . carbone . distribution:
-  formule: 2100
+  formule: 2270
   unité: gCO2e
 acv . smartphone . eau . distribution:
-  formule: 10
+  formule: 11.8
   unité: l
 acv . smartphone . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . smartphone . carbone . fin de vie:
-  formule: 200
+  formule: 246
   unité: gCO2e
 acv . smartphone . eau . fin de vie:
   formule: 58300
@@ -46,30 +46,30 @@ acv . smartphone . consommation annuelle:
 
 acv . tablette:
   description: |
-    10.53 inches screen mix of LCD screen, 4.7 GB RAM, 144 GB memory (mix pondéré entre 3 configurations, étude [ADEME-ARCEP](https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html), Rapport 2, page 42)
+    10.44 inches screen mix of LCD screen, 4 GB RAM, 121 GB memory, 3 years lifespan
 acv . tablette . carbone:
 acv . tablette . eau:
 
 acv . tablette . carbone . fabrication:
-  formule: 56300
+  formule: 80500
   unité: gCO2e
 acv . tablette . eau . fabrication:
-  formule: 98500
+  formule: 110000
   unité: l
 acv . tablette . carbone . distribution:
-  formule: 3400
+  formule: 3430
   unité: gCO2e
 acv . tablette . eau . distribution:
-  formule: 20
+  formule: 17.8
   unité: l
 acv . tablette . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . tablette . carbone . fin de vie:
-  formule: 400
+  formule: 364
   unité: gCO2e
 acv . tablette . eau . fin de vie:
-  formule: 61500
+  formule: 61600
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . tablette . durée de vie théorique:
@@ -87,34 +87,34 @@ acv . tablette . consommation annuelle:
 
 acv . ordinateur portable:
   description: |
-    14,6 inches screen, 1 CPU, 11 GB RAM, 497 GB SSD (mix pondéré entre 3 configurations, étude [ADEME-ARCEP](https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html), Rapport 2, page 43-44)
+    1 CPU, 10 GB RAM, 1173 GB HDD, 442 GB SSD, mix of integrated or separated graphic card, 6 years lifespan
 acv . ordinateur portable . carbone:
 acv . ordinateur portable . eau:
 
 acv . ordinateur portable . carbone . fabrication:
-  formule: 170300
+  formule: 170000
   unité: gCO2e
 acv . ordinateur portable . eau . fabrication:
-  formule: 194200
+  formule: 194000
   unité: l
 acv . ordinateur portable . carbone . distribution:
   formule: 12300
   unité: gCO2e
 acv . ordinateur portable . eau . distribution:
-  formule: 60
+  formule: 51.6
   unité: l
 acv . ordinateur portable . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur portable . carbone . fin de vie:
-  formule: 2800
+  formule: 2790
   unité: gCO2e
 acv . ordinateur portable . eau . fin de vie:
-  formule: 638400
+  formule: 638000
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . ordinateur portable . durée de vie théorique:
-  formule: 5
+  formule: 6
   unité: an
 acv . ordinateur portable . consommation en mode actif:
   formule: 25
@@ -128,30 +128,30 @@ acv . ordinateur portable . consommation annuelle:
 
 acv . TV:
   description: |
-    Average dimension and technology (82% LCD (45 inches), 1% OLED (53 inches), 17% OLED (68 inches)) (mix pondéré entre 3 configurations)
+    Television; use mix, personal use; average dimension (48 inches) and technology (86.7% LCD, 13.3% OLED), 8 years lifespan
 acv . TV . carbone:
 acv . TV . eau:
 
 acv . TV . carbone . fabrication:
-  formule: 372600
+  formule: 325000
   unité: gCO2e
 acv . TV . eau . fabrication:
-  formule: 1113200
+  formule: 869000
   unité: l
 acv . TV . carbone . distribution:
-  formule: 3200
+  formule: 3260
   unité: gCO2e
 acv . TV . eau . distribution:
-  formule: 10
+  formule: 10.6
   unité: l
 acv . TV . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . TV . carbone . fin de vie:
-  formule: 11800
+  formule: 11900
   unité: gCO2e
 acv . TV . eau . fin de vie:
-  formule: 1316400
+  formule: 1290000
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . TV . durée de vie théorique:
@@ -169,27 +169,27 @@ acv . TV . consommation annuelle:
 
 acv . ordinateur fixe:
   description: |
-    1 CPU, 10 GB RAM, 1173 GB HDD, 442 GB SSD, mix of integrated or separated graphic card  (mix pondéré entre 5 configurations, étude [ADEME-ARCEP](https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html), Rapport 2, page 45)
+    8 GB RAM, 1000 GB HDD, 256 GB SSD, separated graphic card, 6 years lifespan
 acv . ordinateur fixe . carbone:
 acv . ordinateur fixe . eau:
 
 acv . ordinateur fixe . carbone . fabrication:
-  formule: 258600
+  formule: 259000
   unité: gCO2e
 acv . ordinateur fixe . eau . fabrication:
   formule: 81900
   unité: l
 acv . ordinateur fixe . carbone . distribution:
-  formule: 2900
+  formule: 2940
   unité: gCO2e
 acv . ordinateur fixe . eau . distribution:
-  formule: 10
+  formule: 9.57
   unité: l
 acv . ordinateur fixe . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur fixe . carbone . fin de vie:
-  formule: 6600
+  formule: 6610
   unité: gCO2e
 acv . ordinateur fixe . eau . fin de vie:
   formule: 2070000
@@ -210,7 +210,7 @@ acv . ordinateur fixe . consommation annuelle:
 
 acv . écran:
   description: |
-    Dimension moyenne (24 inches) et mix de technologie (98.6% LCD, 1.4% OLED)  (mix pondéré entre 2 configurations, étude [ADEME-ARCEP](https://librairie.ademe.fr/consommer-autrement/5226-evaluation-de-l-impact-environnemental-du-numerique-en-france-et-analyse-prospective.html), Rapport 2, page 49)
+    average dimension (24 inches) and technology (98.6% LCD, 1.4% OLED), 6,6 years lifespan
 acv . écran . carbone:
 acv . écran . eau:
 
@@ -221,19 +221,19 @@ acv . écran . eau . fabrication:
   formule: 58300
   unité: l
 acv . écran . carbone . distribution:
-  formule: 1300
+  formule: 1290
   unité: gCO2e
 acv . écran . eau . distribution:
-  formule: 5
+  formule: 4.2
   unité: l
 acv . écran . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . écran . carbone . fin de vie:
-  formule: 3900
+  formule: 3950
   unité: gCO2e
 acv . écran . eau . fin de vie:
-  formule: 677200
+  formule: 677000
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . écran . durée de vie théorique:
