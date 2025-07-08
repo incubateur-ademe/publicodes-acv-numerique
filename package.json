@@ -1,5 +1,5 @@
 {
-  "name": "publicodes-acv-numerique",
+  "name": "@incubateur-ademe/publicodes-acv-numerique",
   "description": "Modèle Publicodes de la base de données ACV ADEME sur le numérique",
   "version": "2.0.0-rc.1",
   "author": "Clément Auger",
@@ -14,7 +14,8 @@
     "compile": "publicodes compile",
     "dev": "publicodes dev",
     "pretest": "yarn run compile",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prepack": "yarn compile && cp publicodes-build/* ./"
   },
   "peerDependencies": {
     "publicodes": "^1.8.5"
