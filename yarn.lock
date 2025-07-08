@@ -306,10 +306,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.4.tgz#0b17ec8a70b2385827d52314c1253160a0b9bacc"
   integrity sha512-nOT2vZNw6hJ+z43oP1SPea/G/6AbN6X+bGNhNuq8NtRHy4wsMhw765IKLNmnjek7GvjWBYQ8Q5VBoYTFg9y1UQ==
 
-"@incubateur-ademe/publicodes-commun@^2.0.0-rc.3":
-  version "2.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-2.0.0-rc.3.tgz#dad9c260942946acdd0ddbc91294c6e253402887"
-  integrity sha512-LU5K61M6fnz1oCn+lTOdG1cAyX20EYhw7NWVZCCwt6Zb8DQl1GNeILj6RBhg9Tp580D58eN7S2mKuPWGm/iO0Q==
+"@incubateur-ademe/publicodes-commun@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@incubateur-ademe/publicodes-commun/-/publicodes-commun-2.0.0.tgz#bd0403c418c24512b3d5e60eee635c28b3b003a9"
+  integrity sha512-+5yP8VRyVk77brOVOBmV0eXoizmu47KuZ11gpKYrYzd0i3qSgVQl3l6QycENVCZkwlSW4hF80cuZw6hyfsiXPQ==
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"

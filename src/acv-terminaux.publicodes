@@ -24,7 +24,7 @@ acv . smartphone . eau . distribution:
   formule: 11.8
   unité: l
 acv . smartphone . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . smartphone . carbone . fin de vie:
   formule: 246
@@ -65,7 +65,7 @@ acv . tablette . eau . distribution:
   formule: 17.8
   unité: l
 acv . tablette . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . tablette . carbone . fin de vie:
   formule: 364
@@ -106,7 +106,7 @@ acv . ordinateur portable . eau . distribution:
   formule: 51.6
   unité: l
 acv . ordinateur portable . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur portable . carbone . fin de vie:
   formule: 2790
@@ -147,7 +147,7 @@ acv . TV . eau . distribution:
   formule: 10.6
   unité: l
 acv . TV . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . TV . carbone . fin de vie:
   formule: 11900
@@ -188,7 +188,7 @@ acv . ordinateur fixe . eau . distribution:
   formule: 9.57
   unité: l
 acv . ordinateur fixe . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur fixe . carbone . fin de vie:
   formule: 6610
@@ -229,7 +229,7 @@ acv . écran . eau . distribution:
   formule: 4.2
   unité: l
 acv . écran . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . écran . carbone . fin de vie:
   formule: 3950
@@ -271,7 +271,7 @@ acv . casque . eau . distribution:
   formule: 5
   unité: l
 acv . casque . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . casque . carbone . fin de vie:
   formule: 1300
@@ -313,7 +313,7 @@ acv . enceinte . eau . distribution:
   formule: 5
   unité: l
 acv . enceinte . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . enceinte . carbone . fin de vie:
   formule: 700
@@ -352,7 +352,7 @@ acv . console de salon . eau . distribution:
   formule: 1
   unité: l
 acv . console de salon . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . console de salon . carbone . fin de vie:
   formule: 4600
@@ -391,7 +391,7 @@ acv . console portable . eau . distribution:
   formule: 1
   unité: l
 acv . console portable . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . console portable . carbone . fin de vie:
   formule: 500
@@ -430,7 +430,7 @@ acv . imprimante . eau . distribution:
   formule: 20
   unité: l
 acv . imprimante . carbone . usage théorique:
-  formule: consommation annuelle * publicodes-commun . intensité électricité * 1000 gCO2e/kgCO2e * durée de vie théorique
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . imprimante . carbone . fin de vie:
   formule: 10200
