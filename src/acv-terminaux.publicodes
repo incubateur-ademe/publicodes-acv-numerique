@@ -1,7 +1,9 @@
 acv:
   titre: Analyse de cycle de vie des appareils
   description: |
-    Cette section présente les émissions de gaz à effet de serre liées à la fabrication, la distribution, l'usage et la fin de vie des appareils électroniques selon l'étude menée par Negaoctet.
+    Cette section présente les émissions de gaz à effet de serre liées à la fabrication, la distribution, l'usage et la fin de vie des appareils électroniques selon l'étude menée par Negaoctet en 2022 avec l'ADEME.
+
+    Pour certains appareils, les données ont été mises à jour avec la dernière version de la "bdd numérique" disponible dans la section "Documentation > Base IMPACTS(R) > 4-AE-Base IMPACTS(R) - Documentation." de la Base Empreinte de l'ADEME.
 
 acv . smartphone:
   description: |
