@@ -1,14 +1,17 @@
 {
   "name": "@incubateur-ademe/publicodes-acv-numerique",
   "description": "Modèle Publicodes de la base de données ACV ADEME sur le numérique",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "author": "Clément Auger",
   "license": "MIT",
   "type": "module",
   "main": "publicodes-build/index.js",
   "types": "publicodes-build/index.d.ts",
   "files": [
-    "publicodes-build"
+    "publicodes-build",
+    "index.d.ts",
+    "index.js",
+    "publicodes-acv-numerique.model.json"
   ],
   "scripts": {
     "compile": "publicodes compile",
