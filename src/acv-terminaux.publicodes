@@ -6,8 +6,9 @@ acv:
     Pour certains appareils, les données ont été mises à jour avec la dernière version de la "bdd numérique" disponible dans la section "Documentation > Base IMPACTS(R) > 4-AE-Base IMPACTS(R) - Documentation." de la Base Empreinte de l'ADEME.
 
 acv . smartphone:
+  titre: Smartphone
   description: |
-    6,61 inches screen mix of LCD and OLED technologies, 7,3 GB RAM, 180 GB memory, 2,5 years lifespan
+    Smartphone; average configuration: 6,61 inches screen mix of LCD and OLED technologies, 7,3 GB RAM, 180 GB memory, 2,5 years lifespan
 acv . smartphone . carbone:
 acv . smartphone . eau:
 
@@ -37,7 +38,7 @@ acv . smartphone . durée de vie théorique:
   formule: 2.5
   unité: an
 acv . smartphone . consommation en mode actif:
-  formule: 5.6
+  formule: 4.5
   unité: W
 acv . smartphone . profil utilisation théorique:
   formule: 3
@@ -47,8 +48,9 @@ acv . smartphone . consommation annuelle:
   unité: kWh/an
 
 acv . tablette:
+  titre: Tablette
   description: |
-    10.44 inches screen mix of LCD screen, 4 GB RAM, 121 GB memory, 3 years lifespan
+    Tablet; average configuration: 10.44 inches screen mix of LCD screen, 4 GB RAM, 121 GB memory, 3 years lifespan;
 acv . tablette . carbone:
 acv . tablette . eau:
 
@@ -78,10 +80,11 @@ acv . tablette . durée de vie théorique:
   formule: 3
   unité: an
 acv . tablette . consommation en mode actif:
-  formule: 15
+  formule: 20
   unité: W
 acv . tablette . profil utilisation théorique:
-  formule: 3
+  description: Usage personnel
+  formule: 2.5
   unité: h/jour
 acv . tablette . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
@@ -89,7 +92,7 @@ acv . tablette . consommation annuelle:
 
 acv . ordinateur portable:
   description: |
-    1 CPU, 10 GB RAM, 1173 GB HDD, 442 GB SSD, mix of integrated or separated graphic card, 6 years lifespan
+    Laptop; average configuration: 14,6 inches screen, 1 CPU, 11 GB RAM, 497 GB SSD, 5 years lifespan;
 acv . ordinateur portable . carbone:
 acv . ordinateur portable . eau:
 
@@ -116,12 +119,13 @@ acv . ordinateur portable . eau . fin de vie:
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . ordinateur portable . durée de vie théorique:
-  formule: 6
+  formule: 5
   unité: an
 acv . ordinateur portable . consommation en mode actif:
-  formule: 25
+  formule: 26.5
   unité: W
 acv . ordinateur portable . profil utilisation théorique:
+  description: Usage personnel
   formule: 3
   unité: h/jour
 acv . ordinateur portable . consommation annuelle:
@@ -170,8 +174,9 @@ acv . TV . consommation annuelle:
   unité: kWh/an
 
 acv . ordinateur fixe:
+  titre: Ordinateur fixe (sans écran) personnel
   description: |
-    8 GB RAM, 1000 GB HDD, 256 GB SSD, separated graphic card, 6 years lifespan
+    Desktop; personal use; average configuration: 1 CPU, 10 GB RAM, 1173 GB HDD, 442 GB SSD, mix of integrated or separated graphic card, 6 years lifespan;
 acv . ordinateur fixe . carbone:
 acv . ordinateur fixe . eau:
 
@@ -201,18 +206,19 @@ acv . ordinateur fixe . durée de vie théorique:
   formule: 6
   unité: an
 acv . ordinateur fixe . consommation en mode actif:
-  formule: 50
+  formule: 70
   unité: W
 acv . ordinateur fixe . profil utilisation théorique:
-  formule: 3
+  formule: 4
   unité: h/jour
 acv . ordinateur fixe . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
 
 acv . écran:
+  titre: Ecran d'ordinateur
   description: |
-    average dimension (24 inches) and technology (98.6% LCD, 1.4% OLED), 6,6 years lifespan
+    Computer monitors; average dimension (24 inches) and technology (98.6% LCD, 1.4% OLED), 6,6 years lifespan;
 acv . écran . carbone:
 acv . écran . eau:
 
@@ -242,10 +248,10 @@ acv . écran . durée de vie théorique:
   formule: 6
   unité: an
 acv . écran . consommation en mode actif:
-  formule: 30
+  formule: 50
   unité: W
 acv . écran . profil utilisation théorique:
-  formule: 3
+  formule: 4
   unité: h/jour
 acv . écran . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
