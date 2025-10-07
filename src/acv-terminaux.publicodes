@@ -215,6 +215,48 @@ acv . ordinateur fixe . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
 
+acv . ordinateur fixe pro:
+  titre: Ordinateur fixe (sans écran) professionnel
+  description: |
+    Desktop; profesional use; average configuration: 8 GB RAM, 1000 GB HDD, 256 GB SSD, separated graphic card, 6 years lifespan;
+acv . ordinateur fixe pro . carbone:
+acv . ordinateur fixe pro . eau:
+
+acv . ordinateur fixe pro . carbone . fabrication:
+  formule: 203000
+  unité: gCO2e
+acv . ordinateur fixe pro . eau . fabrication:
+  formule: 66200
+  unité: l
+acv . ordinateur fixe pro . carbone . distribution:
+  formule: 1850
+  unité: gCO2e
+acv . ordinateur fixe pro . eau . distribution:
+  formule: 6.02
+  unité: l
+acv . ordinateur fixe pro . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . ordinateur fixe pro . carbone . fin de vie:
+  formule: 6610
+  unité: gCO2e
+acv . ordinateur fixe pro . eau . fin de vie:
+  formule: 2070000
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+acv . ordinateur fixe pro . durée de vie théorique:
+  formule: 6
+  unité: an
+acv . ordinateur fixe pro . consommation en mode actif:
+  formule: 70
+  unité: W
+acv . ordinateur fixe pro . profil utilisation théorique:
+  formule: 6
+  unité: h/jour
+acv . ordinateur fixe pro . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
 acv . écran:
   titre: Ecran d'ordinateur
   description: |
@@ -257,52 +299,113 @@ acv . écran . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
 
-acv . casque:
+acv . casque de réalité virtuelle:
   titre: Casque de réalité virtuelle
   description: |
-    Moyenne de deux technologies (50% LCD, 50%OLED) + prise en compte de deux manettes
-acv . casque . carbone:
-acv . casque . eau:
+    Moyenne de deux technologies (50% LCD, 50%OLED)
+acv . casque de réalité virtuelle . carbone:
+acv . casque de réalité virtuelle . eau:
 
-acv . casque . carbone . fabrication:
-  formule: 70400
+acv . casque de réalité virtuelle . carbone . fabrication:
+  formule:
+    moyenne:
+      - 49300 gCO2e
+      - 91400 gCO2e
   unité: gCO2e
-acv . casque . eau . fabrication:
-  formule: 100200
+acv . casque de réalité virtuelle . eau . fabrication:
+  formule:
+    moyenne:
+      - 93400 l
+      - 107000 l
   unité: l
-acv . casque . carbone . distribution:
-  formule: 400
+acv . casque de réalité virtuelle . carbone . distribution:
+  formule:
+    moyenne:
+      - 338 gCO2e
+      - 422 gCO2e
   unité: gCO2e
-acv . casque . eau . distribution:
-  formule: 5
+acv . casque de réalité virtuelle . eau . distribution:
+  formule:
+    moyenne:
+      - 0.117 l
+      - 0.146 l
   unité: l
-acv . casque . carbone . usage théorique:
+acv . casque de réalité virtuelle . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
-acv . casque . carbone . fin de vie:
-  formule: 1300
+acv . casque de réalité virtuelle . carbone . fin de vie:
+  formule:
+    moyenne:
+      - 1410 gCO2e
+      - 1940 gCO2e
   unité: gCO2e
-acv . casque . eau . fin de vie:
-  formule: -23600
+acv . casque de réalité virtuelle . eau . fin de vie:
+  formule:
+    moyenne:
+      - 94600 l
+      - 152000 l
   unité: l
   note: |
     Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
     Curieux cette valeur négative, la seule parmi les appareils ici.
-acv . casque . durée de vie théorique:
+acv . casque de réalité virtuelle . durée de vie théorique:
   formule: 5
   unité: an
-acv . casque . consommation en mode actif:
+acv . casque de réalité virtuelle . consommation en mode actif:
   formule: 2
   unité: W
-acv . casque . profil utilisation théorique:
-  formule: 3
+acv . casque de réalité virtuelle . profil utilisation théorique:
+  formule: 1
   unité: h/jour
-acv . casque . consommation annuelle:
+acv . casque de réalité virtuelle . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . manette casque de réalité virtuelle:
+  titre: Manette de casque de réalité virtuelle
+acv . manette casque de réalité virtuelle . carbone:
+acv . manette casque de réalité virtuelle . eau:
+
+acv . manette casque de réalité virtuelle . carbone . fabrication:
+  formule: 3260
+  unité: gCO2e
+acv . manette casque de réalité virtuelle . eau . fabrication:
+  formule: 29600
+  unité: l
+acv . manette casque de réalité virtuelle . carbone . distribution:
+  formule: 61.9
+  unité: gCO2e
+acv . manette casque de réalité virtuelle . eau . distribution:
+  formule: 0.214
+  unité: l
+acv . manette casque de réalité virtuelle . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . manette casque de réalité virtuelle . carbone . fin de vie:
+  formule: 300
+  unité: gCO2e
+acv . manette casque de réalité virtuelle . eau . fin de vie:
+  formule: 10300
+  unité: l
+  note: |
+    Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+    Curieux cette valeur négative, la seule parmi les appareils ici.
+acv . manette casque de réalité virtuelle . durée de vie théorique:
+  formule: 5
+  unité: an
+acv . manette casque de réalité virtuelle . consommation en mode actif:
+  formule: 0.02
+  unité: W
+acv . manette casque de réalité virtuelle . profil utilisation théorique:
+  formule: 1
+  unité: h/jour
+acv . manette casque de réalité virtuelle . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
 
 acv . enceinte:
   titre: Enceinte connectée
+  description: Chiffres issus d'un rapport précédent à la v2.0.0 de la Base Empreinte.
 acv . enceinte . carbone:
 acv . enceinte . eau:
 
@@ -342,6 +445,8 @@ acv . enceinte . consommation annuelle:
   unité: kWh/an
 
 acv . console de salon:
+  titre: Console de salon
+  description: Chiffres issus d'un rapport précédent à la v2.0.0 de la Base Empreinte.
 acv . console de salon . carbone:
 acv . console de salon . eau:
 
@@ -381,6 +486,8 @@ acv . console de salon . consommation annuelle:
   unité: kWh/an
 
 acv . console portable:
+  titre: Console portable
+  description: Chiffres issus d'un rapport précédent à la v2.0.0 de la Base Empreinte.
 acv . console portable . carbone:
 acv . console portable . eau:
 
@@ -420,6 +527,8 @@ acv . console portable . consommation annuelle:
   unité: kWh/an
 
 acv . imprimante:
+  titre: Imprimante
+  description: Chiffres issus d'un rapport précédent à la v2.0.0 de la Base Empreinte.
 acv . imprimante . carbone:
 acv . imprimante . eau:
 
@@ -455,5 +564,235 @@ acv . imprimante . profil utilisation théorique:
   formule: 1
   unité: h/jour
 acv . imprimante . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . chargeur ordinateur:
+  titre: Alimentation - Externe ordinateur portable
+  description: |
+    External power supply (EPS); use mix; for laptop, input AC 100-240V, output DC 19-20V;
+acv . chargeur ordinateur . carbone:
+acv . chargeur ordinateur . eau:
+
+acv . chargeur ordinateur . carbone . fabrication:
+  formule: 3510
+  unité: gCO2e
+acv . chargeur ordinateur . eau . fabrication:
+  formule: 1850
+  unité: l
+acv . chargeur ordinateur . carbone . distribution:
+  formule: 140
+  unité: gCO2e
+acv . chargeur ordinateur . eau . distribution:
+  formule: 455
+  unité: l
+acv . chargeur ordinateur . carbone . usage théorique:
+  formule: 0
+  unité: gCO2e
+  description: Pas d'usage associé
+acv . chargeur ordinateur . carbone . fin de vie:
+  formule: 542
+  unité: gCO2e
+acv . chargeur ordinateur . eau . fin de vie:
+  formule: 168000
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+
+acv . chargeur smartphone:
+  titre: Alimentation - Externe smartphone et tablette
+  description: |
+    External power supply (EPS); use mix; for smartphone and tablet, input AC 100-240V, output DC 5-20V;
+acv . chargeur smartphone . carbone:
+acv . chargeur smartphone . eau:
+
+acv . chargeur smartphone . carbone . fabrication:
+  formule: 349
+  unité: gCO2e
+acv . chargeur smartphone . eau . fabrication:
+  formule: 146
+  unité: l
+acv . chargeur smartphone . carbone . distribution:
+  formule: 13.6
+  unité: gCO2e
+acv . chargeur smartphone . eau . distribution:
+  formule: 44.4
+  unité: l
+acv . chargeur smartphone . carbone . usage théorique:
+  formule: 0
+  unité: gCO2e
+  description: Pas d'usage associé
+acv . chargeur smartphone . carbone . fin de vie:
+  formule: 52.7
+  unité: gCO2e
+acv . chargeur smartphone . eau . fin de vie:
+  formule: 15800
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+
+acv . clé USB:
+  titre: Clé USB
+  description: |
+    USB key; use mix; average capacity (59.2 Go), 5 years lifespan; RAS
+acv . clé USB . carbone:
+acv . clé USB . eau:
+
+acv . clé USB . carbone . fabrication:
+  formule: 5160
+  unité: gCO2e
+acv . clé USB . eau . fabrication:
+  formule: 2480
+  unité: l
+acv . clé USB . carbone . distribution:
+  formule: 4.24
+  unité: gCO2e
+acv . clé USB . eau . distribution:
+  formule: 13.8
+  unité: l
+acv . clé USB . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . clé USB . carbone . fin de vie:
+  formule: 15.3
+  unité: gCO2e
+acv . clé USB . eau . fin de vie:
+  formule: 4890
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+acv . clé USB . durée de vie théorique:
+  formule: 5
+  unité: an
+acv . clé USB . consommation en mode actif:
+  formule: 0.2
+  unité: W
+acv . clé USB . profil utilisation théorique:
+  formule: 2
+  unité: h/jour
+acv . clé USB . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . disque dur externe:
+  titre: Disque dur externe
+  description: |
+    External Hard Disk Drive (HDD); use mix; average capacity (1700 GB), 5 years lifespan;
+acv . disque dur externe . carbone:
+acv . disque dur externe . eau:
+
+acv . disque dur externe . carbone . fabrication:
+  formule: 11500
+  unité: gCO2e
+acv . disque dur externe . eau . fabrication:
+  formule: 3060
+  unité: l
+acv . disque dur externe . carbone . distribution:
+  formule: 113
+  unité: gCO2e
+acv . disque dur externe . eau . distribution:
+  formule: 368
+  unité: l
+acv . disque dur externe . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . disque dur externe . carbone . fin de vie:
+  formule: 287
+  unité: gCO2e
+acv . disque dur externe . eau . fin de vie:
+  formule: 85500
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+acv . disque dur externe . durée de vie théorique:
+  formule: 5
+  unité: an
+acv . disque dur externe . consommation en mode actif:
+  formule: 4
+  unité: W
+acv . disque dur externe . profil utilisation théorique:
+  formule: 2
+  unité: h/jour
+acv . disque dur externe . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . SSD externe:
+  titre: SSD externe
+  description: |
+    External Solid State Drive (SSD); use mix; average capacity (870 GB), 5 years lifespan;
+acv . SSD externe . carbone:
+acv . SSD externe . eau:
+
+acv . SSD externe . carbone . fabrication:
+  formule: 135000
+  unité: gCO2e
+acv . SSD externe . eau . fabrication:
+  formule: 60200
+  unité: l
+acv . SSD externe . carbone . distribution:
+  formule: 16.1
+  unité: gCO2e
+acv . SSD externe . eau . distribution:
+  formule: 52.3
+  unité: l
+acv . SSD externe . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . SSD externe . carbone . fin de vie:
+  formule: 79.6
+  unité: gCO2e
+acv . SSD externe . eau . fin de vie:
+  formule: 23900
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+acv . SSD externe . durée de vie théorique:
+  formule: 5
+  unité: an
+acv . SSD externe . consommation en mode actif:
+  formule: 0.5
+  unité: W
+acv . SSD externe . profil utilisation théorique:
+  formule: 2
+  unité: h/jour
+acv . SSD externe . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . box:
+  titre: Box
+  description: |
+    Modem; use mix, personal and professional use; xDSL, FTTx, 5 years lifespan; RAS
+acv . box . carbone:
+acv . box . eau:
+
+acv . box . carbone . fabrication:
+  formule: 60800
+  unité: gCO2e
+acv . box . eau . fabrication:
+  formule: 21600
+  unité: l
+acv . box . carbone . distribution:
+  formule: 610
+  unité: gCO2e
+acv . box . eau . distribution:
+  formule: 1.99
+  unité: l
+acv . box . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . box . carbone . fin de vie:
+  formule: 1630
+  unité: gCO2e
+acv . box . eau . fin de vie:
+  formule: 375000
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+acv . box . durée de vie théorique:
+  formule: 5
+  unité: an
+acv . box . consommation en mode actif:
+  formule: 8
+  unité: W
+acv . box . profil utilisation théorique:
+  formule: 24
+  unité: h/jour
+acv . box . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
