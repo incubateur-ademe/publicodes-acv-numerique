@@ -796,3 +796,33 @@ acv . box . profil utilisation théorique:
 acv . box . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
+
+acv . videoprojecteur:
+  titre: Videoprojecteur
+  description: videoprojecteur ou retroprojecteur
+acv . videoprojecteur . carbone:
+
+acv . videoprojecteur . carbone . fabrication:
+  formule: 39200
+  unité: gCO2e
+acv . videoprojecteur . carbone . distribution:
+  formule: 1321.150
+  unité: gCO2e
+acv . videoprojecteur . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . videoprojecteur . carbone . fin de vie:
+  formule: 3260
+  unité: gCO2e
+acv . videoprojecteur . durée de vie théorique:
+  formule: 8
+  unité: an
+acv . videoprojecteur . consommation en mode actif:
+  formule: 200
+  unité: W
+acv . videoprojecteur . profil utilisation théorique:
+  formule: 0.5
+  unité: h/jour
+acv . videoprojecteur . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
