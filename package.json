@@ -1,7 +1,7 @@
 {
   "name": "@incubateur-ademe/publicodes-acv-numerique",
   "description": "Modèle Publicodes de la base de données ACV ADEME sur le numérique",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Clément Auger",
   "license": "MIT",
   "type": "module",
