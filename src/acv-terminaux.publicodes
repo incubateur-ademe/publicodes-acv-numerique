@@ -803,7 +803,7 @@ acv . videoprojecteur:
 acv . videoprojecteur . carbone:
 
 acv . videoprojecteur . carbone . fabrication:
-  formule: 39200
+  formule: 90000
   unité: gCO2e
 acv . videoprojecteur . carbone . distribution:
   formule: 1321.150
