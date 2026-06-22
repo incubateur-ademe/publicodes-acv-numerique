@@ -812,7 +812,7 @@ acv . videoprojecteur . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . videoprojecteur . carbone . fin de vie:
-  formule: 3260
+  formule: 4423
   unité: gCO2e
 acv . videoprojecteur . durée de vie théorique:
   formule: 8
