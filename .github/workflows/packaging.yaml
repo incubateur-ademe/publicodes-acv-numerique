@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+  # Manual trigger to run the release pipeline (publish on npm + dispatch to the
+  # app) without bumping the version in package.json.
+  workflow_dispatch:
 
 jobs:
   check_if_version_upgraded:
@@ -16,6 +19,7 @@ jobs:
     # it's cleaner to stop the execution instead of letting the CI crash.
     if: |
       github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
       github.event.pull_request.head.repo.owner.login == github.event.pull_request.base.repo.owner.login
     runs-on: ubuntu-latest
     outputs:
@@ -39,15 +43,17 @@ jobs:
     # branches with a PR open on main to publish pre-release (x.y.z-rc.u) but
     # not actual releases.
     if: |
-      needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' &&
+      (needs.check_if_version_upgraded.outputs.is_upgraded_version == 'true' &&
       (
         github.event_name == 'push' ||
         needs.check_if_version_upgraded.outputs.is_pre_release == 'true'
-      )
+      )) ||
+      github.event_name == 'workflow_dispatch'
     needs:
       - check_if_version_upgraded
     steps:
       - uses: softprops/action-gh-release@v1
+        continue-on-error: true
         with:
           name: Release v${{ needs.check_if_version_upgraded.outputs.to_version }}
           tag_name: v${{ needs.check_if_version_upgraded.outputs.to_version }}
