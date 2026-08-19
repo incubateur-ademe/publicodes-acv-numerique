@@ -36,7 +36,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@incubateur-ademe/publicodes-commun": "^2.0.0",
+    "@incubateur-ademe/publicodes-commun": "^2.2.0",
     "@publicodes/tools": "^1.8.0",
     "vitest": "^2.1.2"
   },
