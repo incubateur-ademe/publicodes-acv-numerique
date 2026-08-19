@@ -3,7 +3,7 @@ acv:
   description: |
     Cette section présente les émissions de gaz à effet de serre liées à la fabrication, la distribution, l'usage et la fin de vie des appareils électroniques selon l'étude menée par Negaoctet en 2022 avec l'ADEME.
 
-    Pour certains appareils, les données ont été mises à jour avec la dernière version de la "bdd numérique" disponible dans la section "Documentation > Base IMPACTS(R) > 4-AE-Base IMPACTS(R) - Documentation." de la Base Empreinte de l'ADEME.
+    Pour certains appareils, les données ont été mises à jour avec la dernière version de la "bdd numérique" disponible dans la section "Documentation > Base IMPACTS(R) > 4-AE-Base IMPACTS(R) - Documentation." de la Base Empreinte de l'ADEME. Pour d'autres (vidéoprojecteur), les données sont issues des travaux encore en cours et transmises par le service SONUM directement et ne sont pas encore publiées dans la Base Empreinte.
 
 acv . smartphone:
   titre: Smartphone
