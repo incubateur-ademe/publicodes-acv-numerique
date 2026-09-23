@@ -1,0 +1,34 @@
+content delivery network:
+  formule:
+    somme:
+      - content delivery network . construction
+      - content delivery network . transport
+      - content delivery network . usage
+      - content delivery network . fin de vie
+  unité: gCO2e
+  note: par Go
+
+content delivery network . consommation électrique:
+  formule: 0.43125317098
+  unité: Wh/Go
+
+content delivery network . nombre de serveur:
+  formule: 0.00000040793
+  unité: serveur.an/Go
+
+content delivery network . construction:
+  formule: 0.56529
+  unité: gCO2e/Go
+
+content delivery network . transport:
+  formule: 0.01065
+  unité: gCO2e/Go
+
+content delivery network . usage:
+  formule: 0.02888
+  unité: gCO2e/Go
+
+content delivery network . fin de vie:
+  formule: 0.00809
+  unité: gCO2e/Go
+

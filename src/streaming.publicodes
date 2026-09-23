@@ -1,203 +1,245 @@
 streaming:
+  titre: Visionnage d'une vidéo en streaming
   formule:
-    variations:
-      - si: durée > 0
-        alors:
-          somme:
-            - terminaux
-            - transmission
-            - data center
-      - sinon: 0
+    somme:
+      - streaming . terminaux
+      - streaming . transmission
+      - streaming . data center
+      - streaming . content delivery network
   unité: gCO2e
-
-streaming . qualité:
-  titre: Qualité de la vidéo
-  avec:
-    SD:
-    HD:
-    ultra HD:
-      titre: 4K
-  question: Quelle est la qualité de la vidéo ?
-  une possibilité:
-    - SD
-    - HD
-    - ultra HD
-  par défaut: "'HD'"
-
-streaming . qualité . facteur qualité:
-  formule:
-    variations:
-      - si: qualité = 'SD'
-        alors: 0.7
-      - si: qualité = 'HD'
-        alors: 3
-      - si: qualité = 'ultra HD'
-        alors: 7
-  unité: Go/h
 
 streaming . durée:
   titre: Temps de visionnage
-  question: Quelle est la durée de la vidéo ?
+  question: Quelle est la durée de visionnage ?
   par défaut: 60
   unité: minute
 
 streaming . durée en heure:
-  titre: Temps de visionnage en heure
-  formule: durée / 60 minute/h
+  formule: streaming . durée / 60 minute/h
   unité: h
 
+streaming . qualité:
+  titre: Qualité de la vidéo
+  question: Quelle est la qualité de la vidéo ?
+  avec:
+    SD:
+      titre: SD
+    HD:
+      titre: HD
+    ultra HD:
+      titre: 4K / Ultra HD
+  une possibilité:
+    - SD
+    - HD
+    - ultra HD
+  par défaut: "'SD'"
+
+streaming . qualité . débit:
+  formule:
+    variations:
+      - si: streaming . qualité = 'SD'
+        alors: 0.7
+      - si: streaming . qualité = 'HD'
+        alors: 3 
+      - si: streaming . qualité = 'ultra HD'
+        alors: 7
+  unité: Go/h
+
 streaming . taille:
-  titre: Taille de la vidéo
-  formule: durée en heure * qualité . facteur qualité
+  titre: Volume de données de la vidéo
+  formule: streaming . durée en heure * streaming . qualité . débit
   unité: Go
+
+streaming . appareil:
+  titre: Appareil utilisé
+  question: Sur quel appareil visionnez-vous la vidéo ?
+  avec:
+    ordinateur fixe et écran:
+      titre: Ordinateur fixe et écran
+    ordinateur portable:
+      titre: Ordinateur portable
+    tablette:
+      titre: Tablette
+    smartphone:
+      titre: Smartphone
+    téléviseur:
+      titre: Téléviseur
+    smart TV:
+      titre: Smart TV
+    projecteur:
+      titre: Projecteur
+    moyenne:
+      titre: Mix moyen d'appareils
+  une possibilité:
+    - ordinateur fixe et écran
+    - ordinateur portable
+    - tablette
+    - smartphone
+    - téléviseur
+    - smart TV
+    - projecteur
+    - moyenne
+  par défaut: "'moyenne'"
+
+streaming . réseau:
+  titre: Type de réseau
+  question: Quel type de réseau utilisez-vous ?
+  avec:
+    fixe:
+      titre: Réseau fixe
+    mobile:
+      titre: Réseau mobile
+  une possibilité:
+    - fixe
+    - mobile
+  par défaut: "'mobile'"
 
 streaming . terminaux:
   formule:
     somme:
-      - construction
-      - usage
+      - streaming . terminaux . construction
+      - streaming . terminaux . usage
   unité: gCO2e
 
 streaming . terminaux . construction:
   valeur: construction réelle
   contexte:
-    appareil par défaut: appareil
-    durée en heure par défaut: durée en heure
-    moyenne utilisation ordinateur et écran par défaut: appareil . moyenne utilisation ordinateur et écran
-    moyenne utilisation ordinateur portable par défaut: appareil . moyenne utilisation ordinateur portable
-    moyenne utilisation tablette par défaut: appareil . moyenne utilisation tablette
-    moyenne utilisation smartphone par défaut: appareil . moyenne utilisation smartphone
-    moyenne utilisation TV par défaut: appareil . moyenne utilisation TV
-
-streaming . appareil:
-  titre: Appareil utilisé
-  avec:
-    ordinateur et écran:
-      titre: ordinateur fixe
-    ordinateur portable:
-    tablette:
-    smartphone:
-    TV:
-  question: Quel appareil utlisez-vous ?
-  une possibilité:
-    - ordinateur et écran
-    - ordinateur portable
-    - tablette
-    - smartphone
-    - TV
-  par défaut: "'moyenne'" # default value has to be set to make sure rules using "appareil" are defined
-
-streaming . appareil . moyenne utilisation ordinateur et écran: 0%
-streaming . appareil . moyenne utilisation ordinateur portable: 15%
-streaming . appareil . moyenne utilisation tablette: 10%
-streaming . appareil . moyenne utilisation smartphone: 5%
-streaming . appareil . moyenne utilisation TV: 70%
+    appareil par défaut: streaming . appareil
+    durée en heure par défaut: streaming . durée en heure
+    moyenne utilisation ordinateur et écran par défaut: streaming . appareil . moyenne utilisation ordinateur fixe et écran
+    moyenne utilisation ordinateur portable par défaut: streaming . appareil . moyenne utilisation ordinateur portable
+    moyenne utilisation tablette par défaut: streaming . appareil . moyenne utilisation tablette
+    moyenne utilisation smartphone par défaut: streaming . appareil . moyenne utilisation smartphone
+    moyenne utilisation TV par défaut: streaming . appareil . moyenne utilisation téléviseur
+    moyenne utilisation smart TV par défaut: streaming . appareil . moyenne utilisation smart TV
+    moyenne utilisation projecteur par défaut: streaming . appareil . moyenne utilisation projecteur
+  unité: gCO2e
 
 streaming . terminaux . usage:
   valeur: usage réel
   contexte:
-    appareil par défaut: appareil
-    durée en heure par défaut: durée en heure
-    moyenne utilisation ordinateur et écran par défaut: appareil . moyenne utilisation ordinateur et écran
-    moyenne utilisation ordinateur portable par défaut: appareil . moyenne utilisation ordinateur portable
-    moyenne utilisation tablette par défaut: appareil . moyenne utilisation tablette
-    moyenne utilisation smartphone par défaut: appareil . moyenne utilisation smartphone
-    moyenne utilisation TV par défaut: appareil . moyenne utilisation TV
+    appareil par défaut: streaming . appareil
+    durée en heure par défaut: streaming . durée en heure
+    moyenne utilisation ordinateur et écran par défaut: streaming . appareil . moyenne utilisation ordinateur fixe et écran
+    moyenne utilisation ordinateur portable par défaut: streaming . appareil . moyenne utilisation ordinateur portable
+    moyenne utilisation tablette par défaut: streaming . appareil . moyenne utilisation tablette
+    moyenne utilisation smartphone par défaut: streaming . appareil . moyenne utilisation smartphone
+    moyenne utilisation TV par défaut: streaming . appareil . moyenne utilisation téléviseur
+    moyenne utilisation smart TV par défaut: streaming . appareil . moyenne utilisation smart TV
+    moyenne utilisation projecteur par défaut: streaming . appareil . moyenne utilisation projecteur
+  unité: gCO2e
+
+streaming . appareil . moyenne utilisation ordinateur fixe et écran:
+  formule: 0%
+
+streaming . appareil . moyenne utilisation ordinateur portable:
+  formule: 18%
+
+streaming . appareil . moyenne utilisation tablette:
+  formule: 0%
+
+streaming . appareil . moyenne utilisation smartphone:
+  formule: 0%
+
+streaming . appareil . moyenne utilisation téléviseur:
+  formule: 82%
+
+streaming . appareil . moyenne utilisation smart TV:
+  formule: 0%
+
+streaming . appareil . moyenne utilisation projecteur:
+  formule: 0%
 
 streaming . transmission:
   valeur: transmission par défaut
   contexte:
-    transmission par défaut . taille par défaut: taille
-    transmission par défaut . réseau par défaut: réseau
+    transmission par défaut . taille par défaut: streaming . taille
+    transmission par défaut . réseau: streaming . transmission . réseau
   unité: gCO2e
 
 streaming . transmission . réseau:
-  titre: Type de réseau utilisé
-  avec:
-    fixe FR:
-      titre: Réseau fixe en France
-    mobile FR:
-      titre: Réseau mobile en France
-    fixe EU:
-      titre: Réseau fixe en Europe
-    mobile EU:
-      titre: Réseau mobile en Europe
-  question: Utilisez-vous le réseau fixe ou mobile ?
-  une possibilité:
-    - fixe FR
-    - mobile FR
-    - fixe EU
-    - mobile EU
-  par défaut: "'fixe FR'"
+  formule:
+    variations:
+      - si: streaming . réseau = 'fixe'
+        alors: "'fixe Go'"
+      - si: streaming . réseau = 'mobile'
+        alors: "'mobile Go'"
+  par défaut: "'mobile Go'"
 
 streaming . data center:
   formule:
     somme:
-      - construction
-      - usage
+      - streaming . data center . construction
+      - streaming . data center . transport
+      - streaming . data center . usage
+      - streaming . data center . fin de vie
   unité: gCO2e
+
+streaming . data center . facteur d'allocation:
+  formule: streaming . durée en heure * data center . nombre de serveur
+  unité: serveur.an
 
 streaming . data center . construction:
-  valeur: construction data center
-  contexte:
-    construction data center . serveur . facteur d'allocation: facteur d'allocation serveur * streaming . durée en heure
-  note: Stockage négligé car divisé entre un nombre très important de visionnage
-
-streaming . data center . construction . facteur d'allocation serveur:
-  formule: nombre de serveurs / nombre d'heures de visionnage par an / serveur . durée de vie
-
-streaming . data center . usage:
-  valeur: usage data center
-  contexte:
-    usage data center . consommation électricité: consommation électricité
+  formule: streaming . data center . facteur d'allocation * streaming . data center . construction unitaire
   unité: gCO2e
 
-streaming . data center . usage . consommation électricité:
-  formule: taille * électricité par Go en Wh / 1000 Wh/kWh
-  unité: kWh
+streaming . data center . transport:
+  formule: streaming . data center . facteur d'allocation * streaming . data center . transport unitaire
+  unité: gCO2e
 
-streaming . data center . usage . électricité par Go en Wh:
-  formule: électricité par Go * 1000000 Wh/MWh
-  unité: Wh/Go
+streaming . data center . fin de vie:
+  formule: streaming . data center . facteur d'allocation * streaming . data center . fin de vie unitaire
+  unité: gCO2e
 
-streaming . data center . usage . électricité par Go:
-  formule: (électricité directe consommée par an + électricité indirecte consommée par an) / volume total de transfert de données
-  unité: MWh/Go
+streaming . data center . usage:
+  formule: streaming . durée en heure * streaming . data center . usage unitaire
+  unité: gCO2e
 
-streaming . data center . nombre de serveurs:
-  formule: puissance installée avant PUE / serveur . puissance
+streaming . data center . part cloud:
+  formule: 75%
 
-streaming . data center . volume total de transfert de données:
-  formule: nombre d'heures de visionnage par an * consommation de donnée moyenne par heure de visionnage
+streaming . data center . part en propre:
+  formule: 100% - streaming . data center . part cloud
 
-streaming . data center . puissance installée avant PUE:
-  formule: (électricité directe consommée par an + électricité indirecte consommée par an) / serveur . PUE streaming * 1000000 W.h/MWh / 365 jour/an / 24 h/jour
-  unité: W
+streaming . data center . construction unitaire:
+  formule: (streaming . data center . part en propre * data center . origine en propre . construction) + (streaming . data center . part cloud * data center . origine en cloud . construction)
+  unité: gCO2e/serveur.an
 
-streaming . électricité directe consommée par an:
-  formule: 94000
-  unité: MWh/an
-  référence: Netflix Environmental Social Governance 2019
+streaming . data center . transport unitaire:
+  formule: (streaming . data center . part en propre * data center . origine en propre . transport) + (streaming . data center . part cloud * data center . origine en cloud . transport)
+  unité: gCO2e/serveur.an
 
-streaming . électricité indirecte consommée par an:
-  formule: 357000
-  unité: MWh/an
-  référence: Netflix Environmental Social Governance 2019
+streaming . data center . fin de vie unitaire:
+  formule: (streaming . data center . part en propre * data center . origine en propre . fin de vie) + (streaming . data center . part cloud * data center . origine en cloud . fin de vie)
+  unité: gCO2e/serveur.an
 
-streaming . consommation de donnée moyenne par heure de visionnage:
-  formule: 1.9
-  unité: Go/h
-  référence: |
-    "Factcheck: What is the carbon footprint of streaming video on Netflix?" CarbonBrief
+streaming . data center . usage unitaire:
+  formule: (streaming . data center . part en propre * data center . origine en propre . usage) + (streaming . data center . part cloud * data center . origine en cloud . usage)
+  unité: gCO2e/h
 
-streaming . nombre d'utilisateurs par an:
-  formule: 167000000
-  référence: |
-    "Factcheck: What is the carbon footprint of streaming video on Netflix?" CarbonBrief
+streaming . content delivery network:
+  formule:
+    somme:
+      - streaming . content delivery network . construction
+      - streaming . content delivery network . transport
+      - streaming . content delivery network . usage
+      - streaming . content delivery network . fin de vie
+  unité: gCO2e
 
-streaming . nombre d'heures de visionnage par an:
-  formule: 2 h/jour * 365 jour/an * nombre d'utilisateurs par an
-  note: |
-    On a ici une hypothèse importante: les utilisateurs passeraient 2 heures sur Netflix par jour en moyenne.
-  référence: |
-    "Factcheck: What is the carbon footprint of streaming video on Netflix?" CarbonBrief
+streaming . content delivery network . construction:
+  formule: streaming . taille * content delivery network . construction
+  unité: gCO2e
+
+streaming . content delivery network . transport:
+  formule: streaming . taille * content delivery network . transport
+  unité: gCO2e
+
+streaming . content delivery network . usage:
+  formule: streaming . taille * content delivery network . usage
+  unité: gCO2e
+
+streaming . content delivery network . fin de vie:
+  formule: streaming . taille * content delivery network . fin de vie
+  unité: gCO2e
+
+  

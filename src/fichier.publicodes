@@ -1,32 +1,35 @@
 fichier:
   formule:
     variations:
-      - si: taille > 0
+      - si: fichier . taille > 0 Go
         alors:
           somme:
-            - transmission
-            - data center
-      - sinon: 0
+            - fichier . transmission
+            - fichier . data center
+            - fichier . content delivery network
+      - sinon: 0 gCO2e
   unité: gCO2e
   note: |
-    Les terminaux ne sont pas pris en compte 
-    (hypothèse : le téléchargement / l'upload de fichier se fait en tâche de fond, en même temps que d'autres actions)
+    Les terminaux ne sont pas pris en compte.
+    Le téléchargement ou l'upload est considéré comme réalisé en tâche de fond.
 
 fichier . taille:
   titre: Taille du fichier
-  question: Quelle est la taille du mail (en Go)?
+  question: Quelle est la taille du fichier en Go ?
   par défaut: 1
   unité: Go
 
 fichier . transmission:
   valeur: transmission par défaut
   contexte:
-    transmission par défaut . taille par défaut: taille
-    transmission par défaut . réseau par défaut: réseau
+    transmission par défaut . taille par défaut: fichier . taille
+    transmission par défaut . réseau par défaut: fichier . réseau
   unité: gCO2e
 
-fichier . transmission . réseau:
+
+fichier . réseau:
   titre: Type de réseau utilisé
+  question: Utilisez-vous le réseau fixe ou mobile ?
   avec:
     fixe FR:
       titre: Réseau fixe en France
@@ -36,49 +39,37 @@ fichier . transmission . réseau:
       titre: Réseau fixe en Europe
     mobile EU:
       titre: Réseau mobile en Europe
-  question: Utilisez-vous le réseau fixe ou mobile ?
   une possibilité:
     - fixe FR
     - mobile FR
     - fixe EU
     - mobile EU
-  par défaut: "'fixe FR'"
+  par défaut: "'mobile FR'"
 
 fichier . data center:
-  formule:
-    somme:
-      - construction
-      - usage
+  valeur: data center . impact moyen
   unité: gCO2e
 
-fichier . data center . construction:
-  valeur: construction data center
-  contexte:
-    construction data center . serveur . facteur d'allocation: facteur allocation serveur * fichier . taille
-    construction data center . stockage . facteur d'allocation: 0
-  note: Stockage non pris en compte, considérant que le fichier peut être partagé par un grand nombre de personnes
-
-fichier . data center . facteur allocation serveur:
-  formule: streaming . data center . nombre de serveurs / streaming . data center . volume total de transfert de données / serveur . durée de vie
-  note: Idem streaming
-
-fichier . data center . usage:
-  valeur: usage data center
-  contexte:
-    usage data center . consommation électricité: consommation électricité
+fichier . content delivery network:
+  formule: fichier . taille * content delivery network
   unité: gCO2e
-  note: |
-    La quantité de serveur dédié pour l'upload d'un fichier n'étant pas connue, 
-    il a été considéré par hypothèse que celle-ci est similaire à celle de la vidéo en ligne.
 
-fichier . data center . usage . consommation électricité:
-  formule: taille * électricité par Go en Wh / 1000 Wh/kWh
-  unité: kWh
+fichier . contrôle:
 
-fichier . data center . usage . électricité par Go en Wh:
-  formule: électricité par Go * 1000000 Wh/MWh
-  unité: Wh/Go
+fichier . contrôle . durée:
+  formule: 0.0202020 h
 
-fichier . data center . usage . électricité par Go:
-  formule: streaming . data center . usage . électricité par Go
-  unité: MWh/Go
+fichier . contrôle . durée en minute:
+  formule: fichier . contrôle . durée * 60 minute/h
+  unité: minute
+
+fichier . contrôle . transmission réseau mobile:
+  formule: 0.0095716 gCO2e/Go
+
+fichier . contrôle . data center construction:
+  formule: 0.00017216 gCO2e
+
+fichier . contrôle . CDN:
+  formule: 0.000632 gCO2e/Go
+  
+  
