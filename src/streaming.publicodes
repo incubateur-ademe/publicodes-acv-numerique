@@ -40,7 +40,7 @@ streaming . qualité . débit:
       - si: streaming . qualité = 'SD'
         alors: 0.7
       - si: streaming . qualité = 'HD'
-        alors: 3 
+        alors: 3
       - si: streaming . qualité = 'ultra HD'
         alors: 7
   unité: Go/h
@@ -146,7 +146,7 @@ streaming . transmission:
   valeur: transmission par défaut
   contexte:
     transmission par défaut . taille par défaut: streaming . taille
-    transmission par défaut . réseau: streaming . transmission . réseau
+    transmission par défaut . réseau par défaut: streaming . transmission . réseau
   unité: gCO2e
 
 streaming . transmission . réseau:
@@ -233,5 +233,3 @@ streaming . content delivery network . usage:
 streaming . content delivery network . fin de vie:
   formule: streaming . taille * content delivery network . fin de vie
   unité: gCO2e
-
-  
