@@ -64,10 +64,8 @@ streaming . appareil:
       titre: Smartphone
     téléviseur:
       titre: Téléviseur
-    smart TV:
-      titre: Smart TV
-    projecteur:
-      titre: Projecteur
+    videoprojecteur:
+      titre: videoprojecteur
     moyenne:
       titre: Mix moyen d'appareils
   une possibilité:
@@ -76,8 +74,7 @@ streaming . appareil:
     - tablette
     - smartphone
     - téléviseur
-    - smart TV
-    - projecteur
+    - videoprojecteur
     - moyenne
   par défaut: "'moyenne'"
 
@@ -111,8 +108,7 @@ streaming . terminaux . construction:
     moyenne utilisation tablette par défaut: streaming . appareil . moyenne utilisation tablette
     moyenne utilisation smartphone par défaut: streaming . appareil . moyenne utilisation smartphone
     moyenne utilisation TV par défaut: streaming . appareil . moyenne utilisation téléviseur
-    moyenne utilisation smart TV par défaut: streaming . appareil . moyenne utilisation smart TV
-    moyenne utilisation projecteur par défaut: streaming . appareil . moyenne utilisation projecteur
+    moyenne utilisation videoprojecteur par défaut: streaming . appareil . moyenne utilisation videoprojecteur
   unité: gCO2e
 
 streaming . terminaux . usage:
@@ -125,8 +121,7 @@ streaming . terminaux . usage:
     moyenne utilisation tablette par défaut: streaming . appareil . moyenne utilisation tablette
     moyenne utilisation smartphone par défaut: streaming . appareil . moyenne utilisation smartphone
     moyenne utilisation TV par défaut: streaming . appareil . moyenne utilisation téléviseur
-    moyenne utilisation smart TV par défaut: streaming . appareil . moyenne utilisation smart TV
-    moyenne utilisation projecteur par défaut: streaming . appareil . moyenne utilisation projecteur
+    moyenne utilisation videoprojecteur par défaut: streaming . appareil . moyenne utilisation videoprojecteur
   unité: gCO2e
 
 streaming . appareil . moyenne utilisation ordinateur fixe et écran:
@@ -144,10 +139,7 @@ streaming . appareil . moyenne utilisation smartphone:
 streaming . appareil . moyenne utilisation téléviseur:
   formule: 82%
 
-streaming . appareil . moyenne utilisation smart TV:
-  formule: 0%
-
-streaming . appareil . moyenne utilisation projecteur:
+streaming . appareil . moyenne utilisation videoprojecteur:
   formule: 0%
 
 streaming . transmission:

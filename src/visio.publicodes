@@ -168,30 +168,64 @@ visio . data center:
   formule:
     somme:
       - visio . data center . construction
+      - visio . data center . transport
       - visio . data center . usage
+      - visio . data center . fin de vie
   unité: gCO2e
+
+
+visio . data center . facteur d'allocation:
+  formule: visio . durée en heure * data center . nombre de serveur
+  unité: serveur.an
+
 
 visio . data center . construction:
-  valeur: construction data center
-  contexte:
-    construction data center . serveur . facteur d'allocation: visio . data center . facteur allocation serveur * visio . durée en heure
-
-visio . data center . facteur allocation serveur:
-  formule: 0.000000212181573260480 serveur.an/h
-
-visio . data center . usage:
-  valeur: usage data center
-  contexte:
-    usage data center . consommation électricité: visio . data center . consommation électricité
+  formule: visio . data center . facteur d'allocation * visio . data center . construction unitaire
   unité: gCO2e
 
-visio . data center . consommation électricité:
-  formule: visio . taille * visio . emplacements * visio . data center . électricité par Go / 1000 Wh/kWh
-  unité: kWh
 
-visio . data center . électricité par Go:
-  formule: 0.68 Wh/Go
-  unité: Wh/Go
+visio . data center . transport:
+  formule: visio . data center . facteur d'allocation * visio . data center . transport unitaire
+  unité: gCO2e
+
+
+visio . data center . usage:
+  formule: visio . durée en heure * visio . data center . usage unitaire
+  unité: gCO2e
+
+
+visio . data center . fin de vie:
+  formule: visio . data center . facteur d'allocation * visio . data center . fin de vie unitaire
+  unité: gCO2e
+
+
+visio . data center . part cloud:
+  formule: 75%
+
+
+visio . data center . part en propre:
+  formule: 100% - visio . data center . part cloud
+
+
+visio . data center . construction unitaire:
+  formule: (visio . data center . part en propre * data center . origine en propre . construction) + (visio . data center . part cloud * data center . origine en cloud . construction)
+  unité: gCO2e/serveur.an
+
+
+visio . data center . transport unitaire:
+  formule: (visio . data center . part en propre * data center . origine en propre . transport) + (visio . data center . part cloud * data center . origine en cloud . transport)
+  unité: gCO2e/serveur.an
+
+
+visio . data center . fin de vie unitaire:
+  formule: (visio . data center . part en propre * data center . origine en propre . fin de vie) + (visio . data center . part cloud * data center . origine en cloud . fin de vie)
+  unité: gCO2e/serveur.an
+
+
+visio . data center . usage unitaire:
+  formule: (visio . data center . part en propre * data center . origine en propre . usage) + (visio . data center . part cloud * data center . origine en cloud . usage)
+  unité: gCO2e/h
+
 
 visio . content delivery network:
   formule: visio . emplacements * visio . taille * content delivery network
