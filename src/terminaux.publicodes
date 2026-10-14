@@ -116,25 +116,32 @@ durée en heure par défaut:
   par défaut: 0
   unité: h
 moyenne utilisation ordinateur et écran par défaut:
-  par défaut: 0%
+  par défaut: 0
+  unité: "%"
 moyenne utilisation ordinateur portable par défaut:
-  par défaut: 0%
+  par défaut: 0
+  unité: "%"
 moyenne utilisation tablette par défaut:
-  par défaut: 0%
+  par défaut: 0
+  unité: "%"
 moyenne utilisation smartphone par défaut:
-  par défaut: 0%
+  par défaut: 0
+  unité: "%"
 moyenne utilisation TV par défaut:
-  par défaut: 0%
+  par défaut: 0
+  unité: "%"
 moyenne utilisation videoprojecteur par défaut:
-  par défaut: 0%
+  par défaut: 0
+  unité: "%"
 
 smartphone:
 smartphone . construction:
-  formule:
-    somme:
-      - acv . smartphone . carbone . fabrication
-      - acv . smartphone . carbone . distribution
-      - acv . smartphone . carbone . fin de vie
+  # formule:
+  #   somme:
+  #     - acv . smartphone . carbone . fabrication
+  #     - acv . smartphone . carbone . distribution
+  #     - acv . smartphone . carbone . fin de vie
+  formule: 56300
   unité: gCO2e
 
 smartphone . durée d'usage:
@@ -155,11 +162,12 @@ smartphone . profil utilisation:
 
 tablette:
 tablette . construction:
-  formule:
-    somme:
-      - acv . tablette . carbone . fabrication
-      - acv . tablette . carbone . distribution
-      - acv . tablette . carbone . fin de vie
+  # formule:
+  #   somme:
+  #     - acv . tablette . carbone . fabrication
+  #     - acv . tablette . carbone . distribution
+  #     - acv . tablette . carbone . fin de vie
+  formule: 61500
   unité: gCO2e
 
 tablette . durée d'usage:
@@ -180,11 +188,12 @@ tablette . profil utilisation:
 
 ordinateur portable:
 ordinateur portable . construction:
-  formule:
-    somme:
-      - acv . ordinateur portable . carbone . fabrication
-      - acv . ordinateur portable . carbone . distribution
-      - acv . ordinateur portable . carbone . fin de vie
+  # formule:
+  # somme:
+  #   - acv . ordinateur portable . carbone . fabrication
+  #   - acv . ordinateur portable . carbone . distribution
+  #   - acv . ordinateur portable . carbone . fin de vie
+  formule: 153000
   unité: gCO2e
 
 ordinateur portable . durée d'usage:
@@ -205,11 +214,12 @@ ordinateur portable . profil utilisation:
 
 TV:
 TV . construction:
-  formule:
-    somme:
-      - acv . TV . carbone . fabrication
-      - acv . TV . carbone . distribution
-      - acv . TV . carbone . fin de vie
+  # formule:
+  #   somme:
+  #     - acv . TV . carbone . fabrication
+  #     - acv . TV . carbone . distribution
+  #     - acv . TV . carbone . fin de vie
+  formule: 702000
   unité: gCO2e
 
 TV . durée d'usage:
@@ -230,20 +240,22 @@ TV . profil utilisation:
 
 ordinateur fixe:
 ordinateur fixe . construction:
-  formule:
-    somme:
-      - acv . ordinateur fixe . carbone . fabrication
-      - acv . ordinateur fixe . carbone . distribution
-      - acv . ordinateur fixe . carbone . fin de vie
+  # formule:
+  #   somme:
+  #     - acv . ordinateur fixe . carbone . fabrication
+  #     - acv . ordinateur fixe . carbone . distribution
+  #     - acv . ordinateur fixe . carbone . fin de vie
+  formule: 391000
   unité: gCO2e
 
 écran:
 écran . construction:
-  formule:
-    somme:
-      - acv . écran . carbone . fabrication
-      - acv . écran . carbone . distribution
-      - acv . écran . carbone . fin de vie
+  # formule:
+  #   somme:
+  #     - acv . écran . carbone . fabrication
+  #     - acv . écran . carbone . distribution
+  #     - acv . écran . carbone . fin de vie
+  formule: 71300
   unité: gCO2e
 
 ordinateur et écran:

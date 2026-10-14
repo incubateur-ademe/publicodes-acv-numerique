@@ -1,24 +1,24 @@
-streaming harry potter:
-  contexte:
-    streaming . durée: 1176 minute
-    streaming . qualité: "'HD'"
-    streaming . appareil: "'téléviseur'"
-    streaming . réseau: "'fixe FR'"
-  hypothèse: L'ensemble des films d'Harry Potter dure en moyenne 1176 minutes = 19,6 heures. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
+# streaming harry potter:
+#   contexte:
+#     streaming . durée: 1176 minute
+#     streaming . qualité: "'HD'"
+#     streaming . appareil: "'téléviseur'"
+#     streaming . réseau: "'fixe FR'"
+#   hypothèse: L'ensemble des films d'Harry Potter dure en moyenne 1176 minutes = 19,6 heures. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
 
-streaming game of thrones:
-  contexte:
-    streaming . durée: 5192 minute
-    streaming . qualité: "'HD'"
-    streaming . appareil: "'téléviseur'"
-    streaming . réseau: "'fixe FR'"
-  hypothèse: Un épisode de Game of Thrones dure en moyenne 1 h. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
+# streaming game of thrones:
+#   contexte:
+#     streaming . durée: 5192 minute
+#     streaming . qualité: "'HD'"
+#     streaming . appareil: "'téléviseur'"
+#     streaming . réseau: "'fixe FR'"
+#   hypothèse: Un épisode de Game of Thrones dure en moyenne 1 h. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
 
-streaming friends:
-  contexte:
-    streaming . durée: 5192 minute
-    streaming . qualité: "'HD'"
-    streaming . appareil: "'téléviseur'"
-    streaming . réseau: "'fixe FR'"
-  hypothèse: L'intégrale de Friends est composée de 236 épisodes d'en moyenne 22 minutes. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
+# streaming friends:
+#   contexte:
+#     streaming . durée: 5192 minute
+#     streaming . qualité: "'HD'"
+#     streaming . appareil: "'téléviseur'"
+#     streaming . réseau: "'fixe FR'"
+#   hypothèse: L'intégrale de Friends est composée de 236 épisodes d'en moyenne 22 minutes. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
 

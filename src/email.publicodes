@@ -10,7 +10,6 @@ email:
             - email . terminaux
             - email . transmission
             - email . data center
-            - email . content delivery network
       - sinon: 0 gCO2e
   unité: gCO2e
 
@@ -21,7 +20,7 @@ email . taille:
   unité: Mo
 
 email . taille en Go:
-  formule: email . taille / 1024 Mo/Go
+  formule: email . taille / 1000 Mo/Go
   unité: Go
 
 email . destinataires:
@@ -31,38 +30,31 @@ email . destinataires:
 
 email . durée stockage émetteur:
   titre: Durée de stockage côté émetteur
-  question: Quelle est la durée de stockage du mail côté émetteur ?
-  par défaut: 10
+  valeur: 10
   unité: an
   note: Hypothèse raisonnable ADEME, configurateur Mail.
 
 email . durée stockage récepteur:
   titre: Durée de stockage côté récepteur
-  question: Quelle est la durée de stockage du mail côté récepteur ?
-  par défaut: 10
+  valeur: 10
   unité: an
   note: Hypothèse raisonnable ADEME, configurateur Mail.
 
-email . redondances sauvegarde émetteur:
-  titre: Nombre de redondances de sauvegarde côté émetteur
-  question: Quel est le nombre de redondances de sauvegarde côté émetteur ?
-  par défaut: 3
+# email . redondances sauvegarde émetteur:
+#   titre: Nombre de redondances de sauvegarde côté émetteur
+#   valeur: 3
 
-email . redondances sauvegarde récepteur:
-  titre: Nombre de redondances de sauvegarde côté récepteur
-  question: Quel est le nombre de redondances de sauvegarde côté récepteur ?
-  par défaut: 3
+# email . redondances sauvegarde récepteur:
+#   titre: Nombre de redondances de sauvegarde côté récepteur
+#   valeur: 3
 
 email . taux moyen de remplissage du stockage:
   titre: Taux moyen de remplissage du stockage
-  question: Quel est le taux moyen de remplissage du stockage ?
-  par défaut: 50%
+  valeur: 50%
 
 email . nombre de mails envoyés et reçus par jour et par personne:
   titre: Nombre de mails envoyés et reçus par jour et par personne
-  question: Combien de mails sont envoyés et reçus par jour et par personne ?
-  par défaut: 117.7 /jour
-
+  valeur: 117.7 /jour
 
 email . terminaux:
   formule:
@@ -119,11 +111,6 @@ email . terminaux . temps écriture en h:
   formule: email . terminaux . temps écriture / 60 minute/h
   unité: h
 
-email . terminaux . pourcentage lecture:
-  titre: Taux de lecture du mail
-  question: Quel est le pourcentage de lecture du mail ?
-  par défaut: 100%
-
 email . terminaux . temps lecture récepteur:
   titre: Temps de lecture du mail
   question: Quel est le temps de lecture du mail ?
@@ -131,7 +118,7 @@ email . terminaux . temps lecture récepteur:
   unité: minute
 
 email . terminaux . temps lecture total:
-  formule: email . destinataires * email . terminaux . pourcentage lecture * email . terminaux . temps lecture récepteur
+  formule: email . destinataires * email . terminaux . temps lecture récepteur
   unité: minute
 
 email . terminaux . temps lecture en h:
@@ -160,38 +147,30 @@ email . terminaux . usage:
     moyenne utilisation smartphone par défaut: email . appareil . moyenne utilisation smartphone
   unité: gCO2e
 
-
 email . réseau:
   titre: Type de réseau utilisé
   question: Quel réseau utilisez-vous ?
   avec:
-    fixe FR:
-      titre: Réseau fixe en France
-    mobile FR:
-      titre: Réseau mobile en France
-    fixe EU:
-      titre: Réseau fixe en Europe
-    mobile EU:
-      titre: Réseau mobile en Europe
+    fixe:
+      titre: Réseau fixe
+    mobile:
+      titre: Réseau mobile
   une possibilité:
-    - fixe FR
-    - mobile FR
-    - fixe EU
-    - mobile EU
-  par défaut: "'mobile FR'"
+    - fixe
+    - mobile
+  par défaut: "'mobile'"
 
 email . transmission:
   formule:
     somme:
       - email . transmission . émetteur
       - email . transmission . récepteur
-      - email . transmission . redondances sauvegarde
   unité: gCO2e
 
 email . transmission . émetteur:
   valeur: transmission par défaut
   contexte:
-    transmission par défaut . taille par défaut: email . taille en Go
+    transmission par défaut . taille par défaut: email . taille en Go * email . destinataires
     transmission par défaut . réseau par défaut: email . réseau
   unité: gCO2e
 
@@ -202,30 +181,10 @@ email . transmission . récepteur:
     transmission par défaut . réseau par défaut: email . réseau
   unité: gCO2e
 
-email . transmission . redondances sauvegarde:
-  formule: email . destinataires * email . taille en Go * email . transmission . redondances sauvegarde . facteur réseau * (1 + email . redondances sauvegarde émetteur + email . redondances sauvegarde récepteur)
-  unité: gCO2e
-  note: Calcul des redondances appliqué aux copies émetteur et récepteur.
-
-email . transmission . redondances sauvegarde . réseau:
-  titre: Réseau utilisé pour les sauvegardes
-  avec:
-    fixe FR hors box:
-    fixe EU hors box:
-  question: Quel réseau est utilisé pour la transmission des sauvegardes ?
-  une possibilité:
-    - fixe FR hors box
-    - fixe EU hors box
-  par défaut: "'fixe FR hors box'"
-
-email . transmission . redondances sauvegarde . facteur réseau:
-  formule:
-    variations:
-      - si: email . transmission . redondances sauvegarde . réseau = 'fixe FR hors box'
-        alors: transmission par défaut . facteur réseau fixe Go
-      - si: email . transmission . redondances sauvegarde . réseau = 'fixe EU hors box'
-        alors: transmission par défaut . facteur réseau fixe Go
-  unité: gCO2e/Go
+# email . transmission . redondances sauvegarde:
+#   formule: email . destinataires * email . taille en Go * email . transmission . redondances sauvegarde . facteur réseau * (1 + email . redondances sauvegarde émetteur + email . redondances sauvegarde récepteur)
+#   unité: gCO2e
+#   note: Calcul des redondances appliqué aux copies émetteur et récepteur.
 
 email . data center:
   formule:
@@ -233,94 +192,15 @@ email . data center:
       - email . data center . émetteur
       - email . data center . récepteur
   unité: gCO2e
-  note: |
-    Les résultats de référence sont exprimés pour 0,05 Go :
-    - construction : 0,00011685480 kgCO2e = 0,11685480 gCO2e
-    - transport    : 0,00000563820 kgCO2e = 0,00563820 gCO2e
-    - usage        : 0,00019227521 kgCO2e = 0,19227521 gCO2e
-    - fin de vie   : 0,00000420452 kgCO2e = 0,00420452 gCO2e
-    Chaque coefficient est donc l'impact divisé par 0,05 Go.
-
-email . data center . construction par Go:
-  formule: 2.337096 gCO2e/Go
-  unité: gCO2e/Go
-  
-email . data center . transport par Go:
-  formule: 0.112764 gCO2e/Go
-  unité: gCO2e/Go
-
-email . data center . usage par Go:
-  formule: 3.8455042 gCO2e/Go
-  unité: gCO2e/Go
-
-email . data center . fin de vie par Go:
-  formule: 0.0840904 gCO2e/Go
-  unité: gCO2e/Go
-
-email . data center . quantité en Go:
-  formule: email . taille en Go * email . destinataires
-  unité: Go
-  note: |
-    Le configurateur utilise 0,05 Go dans le cas de référence :
-    1 Mo de pièce jointe * 50 destinataires = 50 Mo = 0,05 Go.
-
-email . data center . part cloud:
-  formule: 75%
-
-email . data center . part en propre:
-  formule: 100% - email . data center . part cloud
 
 email . data center . émetteur:
-  formule:
-    somme:
-      - email . data center . émetteur . construction
-      - email . data center . émetteur . transport
-      - email . data center . émetteur . usage
-      - email . data center . émetteur . fin de vie
-  unité: gCO2e
-
-email . data center . émetteur . construction:
-  formule: email . data center . quantité en Go * email . data center . construction par Go
-  unité: gCO2e
-
-email . data center . émetteur . transport:
-  formule: email . data center . quantité en Go * email . data center . transport par Go
-  unité: gCO2e
-
-email . data center . émetteur . usage:
-  formule: email . data center . quantité en Go * email . data center . usage par Go
-  unité: gCO2e
-
-email . data center . émetteur . fin de vie:
-  formule: email . data center . quantité en Go * email . data center . fin de vie par Go
+  valeur: data center par défaut
+  contexte:
+    data center par défaut . taille par défaut: email . destinataires * email . taille en Go
   unité: gCO2e
 
 email . data center . récepteur:
-  formule:
-    somme:
-      - email . data center . récepteur . construction
-      - email . data center . récepteur . transport
-      - email . data center . récepteur . usage
-      - email . data center . récepteur . fin de vie
+  valeur: data center par défaut
+  contexte:
+    data center par défaut . taille par défaut: email . destinataires * email . taille en Go
   unité: gCO2e
-
-email . data center . récepteur . construction:
-  formule: email . data center . quantité en Go * email . data center . construction par Go
-  unité: gCO2e
-
-email . data center . récepteur . transport:
-  formule: email . data center . quantité en Go * email . data center . transport par Go
-  unité: gCO2e
-
-email . data center . récepteur . usage:
-  formule: email . data center . quantité en Go * email . data center . usage par Go
-  unité: gCO2e
-
-email . data center . récepteur . fin de vie:
-  formule: email . data center . quantité en Go * email . data center . fin de vie par Go
-  unité: gCO2e
-  
-email . content delivery network:
-  formule: (1 + email . destinataires) * email . taille en Go * content delivery network
-  unité: gCO2e
-

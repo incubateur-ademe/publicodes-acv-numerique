@@ -1,75 +1,66 @@
-fichier:
-  formule:
-    variations:
-      - si: fichier . taille > 0 Go
-        alors:
-          somme:
-            - fichier . transmission
-            - fichier . data center
-            - fichier . content delivery network
-      - sinon: 0 gCO2e
-  unité: gCO2e
-  note: |
-    Les terminaux ne sont pas pris en compte.
-    Le téléchargement ou l'upload est considéré comme réalisé en tâche de fond.
+# fichier:
+#   formule:
+#     variations:
+#       - si: fichier . taille > 0 Go
+#         alors:
+#           somme:
+#             - fichier . transmission
+#             - fichier . data center
+#             - fichier . content delivery network
+#       - sinon: 0 gCO2e
+#   unité: gCO2e
+#   note: |
+#     Les terminaux ne sont pas pris en compte.
+#     Le téléchargement ou l'upload est considéré comme réalisé en tâche de fond.
 
-fichier . taille:
-  titre: Taille du fichier
-  question: Quelle est la taille du fichier en Go ?
-  par défaut: 1
-  unité: Go
+# fichier . taille:
+#   titre: Taille du fichier
+#   question: Quelle est la taille du fichier en Go ?
+#   par défaut: 1
+#   unité: Go
 
-fichier . transmission:
-  valeur: transmission par défaut
-  contexte:
-    transmission par défaut . taille par défaut: fichier . taille
-    transmission par défaut . réseau par défaut: fichier . réseau
-  unité: gCO2e
+# fichier . transmission:
+#   valeur: transmission par défaut
+#   contexte:
+#     transmission par défaut . taille par défaut: fichier . taille
+#     transmission par défaut . réseau par défaut: fichier . réseau
+#   unité: gCO2e
 
+# fichier . réseau:
+#   titre: Type de réseau utilisé
+#   question: Utilisez-vous le réseau fixe ou mobile ?
+#   avec:
+#     fixe:
+#       titre: Réseau fixe
+#     mobile:
+#       titre: Réseau mobile
+#   une possibilité:
+#     - fixe
+#     - mobile
+#   par défaut: "'fixe'"
 
-fichier . réseau:
-  titre: Type de réseau utilisé
-  question: Utilisez-vous le réseau fixe ou mobile ?
-  avec:
-    fixe FR:
-      titre: Réseau fixe en France
-    mobile FR:
-      titre: Réseau mobile en France
-    fixe EU:
-      titre: Réseau fixe en Europe
-    mobile EU:
-      titre: Réseau mobile en Europe
-  une possibilité:
-    - fixe FR
-    - mobile FR
-    - fixe EU
-    - mobile EU
-  par défaut: "'mobile FR'"
+# fichier . data center:
+#   valeur: data center . impact moyen
+#   unité: gCO2e
 
-fichier . data center:
-  valeur: data center . impact moyen
-  unité: gCO2e
+# fichier . content delivery network:
+#   formule: fichier . taille * content delivery network
+#   unité: gCO2e
 
-fichier . content delivery network:
-  formule: fichier . taille * content delivery network
-  unité: gCO2e
+# fichier . contrôle:
 
-fichier . contrôle:
+# fichier . contrôle . durée:
+#   formule: 0.0202020 h
 
-fichier . contrôle . durée:
-  formule: 0.0202020 h
+# fichier . contrôle . durée en minute:
+#   formule: fichier . contrôle . durée * 60 minute/h
+#   unité: minute
 
-fichier . contrôle . durée en minute:
-  formule: fichier . contrôle . durée * 60 minute/h
-  unité: minute
+# fichier . contrôle . transmission réseau mobile:
+#   formule: 0.0095716 gCO2e/Go
 
-fichier . contrôle . transmission réseau mobile:
-  formule: 0.0095716 gCO2e/Go
+# fichier . contrôle . data center construction:
+#   formule: 0.00017216 gCO2e
 
-fichier . contrôle . data center construction:
-  formule: 0.00017216 gCO2e
-
-fichier . contrôle . CDN:
-  formule: 0.000632 gCO2e/Go
-  
-  
+# fichier . contrôle . CDN:
+#   formule: 0.000632 gCO2e/Go

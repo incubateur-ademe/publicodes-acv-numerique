@@ -149,21 +149,15 @@ recherche web . transmission:
 recherche web . transmission . réseau:
   titre: Type de réseau utilisé
   avec:
-    fixe FR:
-      titre: Réseau fixe en France
-    mobile FR:
-      titre: Réseau mobile en France
-    fixe EU:
-      titre: Réseau fixe en Europe
-    mobile EU:
-      titre: Réseau mobile en Europe
+    fixe:
+      titre: Réseau fixe
+    mobile:
+      titre: Réseau mobile
   question: Utilisez-vous le réseau fixe ou mobile ?
   une possibilité:
-    - fixe FR
-    - mobile FR
-    - fixe EU
-    - mobile EU
-  par défaut: "'fixe FR'"
+    - fixe
+    - mobile
+  par défaut: "'fixe'"
 
 recherche web . data center:
   formule:
@@ -179,39 +173,31 @@ recherche web . data center:
     - fin de vie   : 0,00000420452 kgCO2e = 0,00420452 gCO2e
     Chaque coefficient est donc l'impact divisé par 0,05 Go.
 
-
 recherche web . data center . construction par Go:
   formule: 2.337096 gCO2e/Go
   unité: gCO2e/Go
-
 
 recherche web . data center . transport par Go:
   formule: 0.112764 gCO2e/Go
   unité: gCO2e/Go
 
-
 recherche web . data center . usage par Go:
   formule: 3.8455042 gCO2e/Go
   unité: gCO2e/Go
-
 
 recherche web . data center . fin de vie par Go:
   formule: 0.0840904 gCO2e/Go
   unité: gCO2e/Go
 
-
 recherche web . data center . quantité en Go:
   formule: recherche web . taille de la requete en Mo * recherche web . nombre de pages de résultats lues * recherche web . taille de la page en Mo / 1024 Mo/Go
   unité: Go
 
-
 recherche web . data center . part cloud:
   formule: 75%
 
-
 recherche web . data center . part en propre:
   formule: 100% - recherche web . data center . part cloud
-
 
 recherche web . data center . émetteur:
   formule:
@@ -222,26 +208,21 @@ recherche web . data center . émetteur:
       - recherche web . data center . émetteur . fin de vie
   unité: gCO2e
 
-
 recherche web . data center . émetteur . construction:
   formule: recherche web . data center . quantité en Go * recherche web . data center . construction par Go
   unité: gCO2e
-
 
 recherche web . data center . émetteur . transport:
   formule: recherche web . data center . quantité en Go * recherche web . data center . transport par Go
   unité: gCO2e
 
-
 recherche web . data center . émetteur . usage:
   formule: recherche web . data center . quantité en Go * recherche web . data center . usage par Go
   unité: gCO2e
 
-
 recherche web . data center . émetteur . fin de vie:
   formule: recherche web . data center . quantité en Go * recherche web . data center . fin de vie par Go
   unité: gCO2e
-
 
 recherche web . data center . récepteur:
   formule:
@@ -252,26 +233,21 @@ recherche web . data center . récepteur:
       - recherche web . data center . récepteur . fin de vie
   unité: gCO2e
 
-
 recherche web . data center . récepteur . construction:
   formule: recherche web . data center . quantité en Go * recherche web . data center . construction par Go
   unité: gCO2e
-
 
 recherche web . data center . récepteur . transport:
   formule: recherche web . data center . quantité en Go * recherche web . data center . transport par Go
   unité: gCO2e
 
-
 recherche web . data center . récepteur . usage:
   formule: recherche web . data center . quantité en Go * recherche web . data center . usage par Go
   unité: gCO2e
 
-
 recherche web . data center . récepteur . fin de vie:
   formule: recherche web . data center . quantité en Go * recherche web . data center . fin de vie par Go
   unité: gCO2e
-
 
 recherche web . content delivery network:
   formule: (1 + recherche web . nombre de pages de résultats lues) * recherche web . taille de la page en Go * content delivery network

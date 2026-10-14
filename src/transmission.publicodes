@@ -1,58 +1,75 @@
 transmission par défaut:
-  formule: taille par défaut * facteur réseau
+  formule: (taille par défaut * facteur réseau) + abonnement
   unité: gCO2e
 
 transmission par défaut . taille par défaut:
-  par défaut: 0
+  question: Quelle est la taille du fichier transmis ?
+  par défaut: 1 Mo / 1000 Mo/Go
   unité: Go
 
 transmission par défaut . réseau par défaut:
-  par défaut: "'fixe Go'"
+  question: Quel est le type de réseau utilisé pour la transmission ?
+  par défaut: "'mobile'"
 
 transmission par défaut . facteur réseau:
   formule:
     variations:
-      - si: réseau par défaut = 'fixe Go'
-        alors: facteur réseau fixe Go
-      - si: réseau par défaut = 'mobile Go'
-        alors: facteur réseau mobile Go
+      - si: réseau par défaut = 'fixe'
+        alors: facteur réseau fixe
+      - si: réseau par défaut = 'mobile'
+        alors: facteur réseau mobile
   unité: gCO2e/Go
 
-transmission par défaut . facteur réseau fixe Go:
+transmission par défaut . facteur réseau fixe:
   formule: 0.956370508
   unité: gCO2e/Go
   note: Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
 
-transmission par défaut . facteur réseau mobile Go:
+transmission par défaut . facteur réseau mobile:
   formule: 9.571624339
   unité: gCO2e/Go
   note: Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
 
-transmission autre:
-  formule: taille autre * facteur réseau autre
+transmission par défaut . abonnement:
+  formule: taille par défaut * facteur horaire abonnement / débit
   unité: gCO2e
 
-transmission autre . taille autre:
-  par défaut: 0
-  unité: h
-
-transmission autre . facteur réseau autre:
+transmission par défaut . débit:
   formule:
     variations:
-      - si: réseau autre = 'fixe heure'
-        alors: facteur réseau fixe heure
-      - si: réseau autre = 'mobile heure'
-        alors: facteur réseau mobile heure
+      - si: réseau par défaut = 'fixe'
+        alors: débit fixe
+      - si: réseau par défaut = 'mobile'
+        alors: débit mobile
+  unité: Go/h
+
+# 1 Mo = 8 Mb
+transmission par défaut . débit fixe:
+  valeur: 300 Mb/s * 3600 s/h / 8000 Mb/Go
+  # 250
+  unité: Go/h
+
+transmission par défaut . débit mobile:
+  valeur: 110 Mb/s * 3600 s/h / 8000 Mb/Go
+  unité: Go/h
+
+transmission par défaut . facteur horaire abonnement:
+  formule:
+    variations:
+      - si: réseau par défaut = 'fixe'
+        alors: facteur horaire abonnement fixe
+      - si: réseau par défaut = 'mobile'
+        alors: facteur horaire abonnement mobile
   unité: gCO2e/h
 
-transmission autre . facteur réseau fixe heure:
+transmission par défaut . facteur horaire abonnement fixe:
   formule: 5.117087337
   unité: gCO2e/h
-  note: Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
+  note: |
+    Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
 
-transmission autre . facteur réseau mobile heure:
+transmission par défaut . facteur horaire abonnement mobile:
   formule: 7.031758714
   unité: gCO2e/h
   note: |
     Étude ADEME 2024 "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
-  

@@ -1,234 +1,214 @@
-visio:
-  formule:
-    variations:
-      - si: visio . durée > 0 minute
-        alors:
-          somme:
-            - visio . terminaux
-            - visio . transmission
-            - visio . data center
-            - visio . content delivery network
-      - sinon: 0 gCO2e
-  unité: gCO2e
+# visio:
+#   formule:
+#     variations:
+#       - si: visio . durée > 0 minute
+#         alors:
+#           somme:
+#             - visio . terminaux
+#             - visio . transmission
+#             - visio . data center
+#             - visio . content delivery network
+#       - sinon: 0 gCO2e
+#   unité: gCO2e
 
-visio . qualité:
-  titre: Qualité de la vidéo
-  question: Quelle est la qualité de la vidéo ?
-  avec:
-    audio:
-      titre: Audio uniquement
-    SD:
-      titre: SD
-    HD:
-      titre: HD
-    ultra HD:
-      titre: 4K
-  une possibilité:
-    - audio
-    - SD
-    - HD
-    - ultra HD
-  par défaut: "'SD'"
+# visio . qualité:
+#   titre: Qualité de la vidéo
+#   question: Quelle est la qualité de la vidéo ?
+#   avec:
+#     audio:
+#       titre: Audio uniquement
+#     SD:
+#       titre: SD
+#     HD:
+#       titre: HD
+#     ultra HD:
+#       titre: 4K
+#   une possibilité:
+#     - audio
+#     - SD
+#     - HD
+#     - ultra HD
+#   par défaut: "'SD'"
 
-visio . qualité . facteur qualité:
-  formule:
-    variations:
-      - si: visio . qualité = 'audio'
-        alors: 0.1640625 Go/h
-      - si: visio . qualité = 'SD'
-        alors: 0.7 Go/h
-      - si: visio . qualité = 'HD'
-        alors: 3 Go/h
-      - si: visio . qualité = 'ultra HD'
-        alors: 7 Go/h
-  unité: Go/h
+# visio . qualité . facteur qualité:
+#   formule:
+#     variations:
+#       - si: visio . qualité = 'audio'
+#         alors: 0.1640625 Go/h
+#       - si: visio . qualité = 'SD'
+#         alors: 0.7 Go/h
+#       - si: visio . qualité = 'HD'
+#         alors: 3 Go/h
+#       - si: visio . qualité = 'ultra HD'
+#         alors: 7 Go/h
+#   unité: Go/h
 
-visio . durée:
-  titre: Temps de la visioconférence
-  question: Quelle est la durée de la visioconférence ?
-  par défaut: 60
-  unité: minute
+# visio . durée:
+#   titre: Temps de la visioconférence
+#   question: Quelle est la durée de la visioconférence ?
+#   par défaut: 60
+#   unité: minute
 
-visio . durée en heure:
-  formule: visio . durée / 60 minute/h
-  unité: h
+# visio . durée en heure:
+#   formule: visio . durée / 60 minute/h
+#   unité: h
 
-visio . taille:
-  titre: Volume de données transmis
-  formule: visio . durée en heure * visio . qualité . facteur qualité
-  unité: Go
+# visio . taille:
+#   titre: Volume de données transmis
+#   formule: visio . durée en heure * visio . qualité . facteur qualité
+#   unité: Go
 
-visio . emplacements:
-  titre: Nombre d'appareils connectés
-  question: Combien d'appareils sont connectés à la visioconférence ?
-  par défaut: 2
+# visio . emplacements:
+#   titre: Nombre d'appareils connectés
+#   question: Combien d'appareils sont connectés à la visioconférence ?
+#   par défaut: 2
 
-visio . appareil . durée totale sollicitation:
-  formule: visio . emplacements * visio . durée en heure
-  unité: h
+# visio . appareil . durée totale sollicitation:
+#   formule: visio . emplacements * visio . durée en heure
+#   unité: h
 
-visio . terminaux:
-  formule:
-    somme:
-      - visio . terminaux . construction
-      - visio . terminaux . usage
-  unité: gCO2e
+# visio . terminaux:
+#   formule:
+#     somme:
+#       - visio . terminaux . construction
+#       - visio . terminaux . usage
+#   unité: gCO2e
 
-visio . appareil:
-  titre: Appareil utilisé
-  question: Quel appareil utilisez-vous ?
-  avec:
-    ordinateur et écran:
-      titre: Ordinateur fixe et écran
-    ordinateur portable:
-      titre: Ordinateur portable
-    tablette:
-      titre: Tablette
-    smartphone:
-      titre: Smartphone
-    TV:
-      titre: Téléviseur
-    moyenne:
-      titre: Mix moyen d'appareils
-  une possibilité:
-    - ordinateur et écran
-    - ordinateur portable
-    - tablette
-    - smartphone
-    - TV
-    - moyenne
-  par défaut: "'moyenne'"
+# visio . appareil:
+#   titre: Appareil utilisé
+#   question: Quel appareil utilisez-vous ?
+#   avec:
+#     ordinateur et écran:
+#       titre: Ordinateur fixe et écran
+#     ordinateur portable:
+#       titre: Ordinateur portable
+#     tablette:
+#       titre: Tablette
+#     smartphone:
+#       titre: Smartphone
+#     TV:
+#       titre: Téléviseur
+#     moyenne:
+#       titre: Mix moyen d'appareils
+#   une possibilité:
+#     - ordinateur et écran
+#     - ordinateur portable
+#     - tablette
+#     - smartphone
+#     - TV
+#     - moyenne
+#   par défaut: "'moyenne'"
 
-visio . appareil . moyenne utilisation ordinateur et écran:
-  formule: 0%
+# visio . appareil . moyenne utilisation ordinateur et écran:
+#   formule: 0%
 
-visio . appareil . moyenne utilisation ordinateur portable:
-  formule: 100%
+# visio . appareil . moyenne utilisation ordinateur portable:
+#   formule: 100%
 
-visio . appareil . moyenne utilisation tablette:
-  formule: 0%
+# visio . appareil . moyenne utilisation tablette:
+#   formule: 0%
 
-visio . appareil . moyenne utilisation smartphone:
-  formule: 0%
+# visio . appareil . moyenne utilisation smartphone:
+#   formule: 0%
 
-visio . appareil . moyenne utilisation TV:
-  formule: 0%
+# visio . appareil . moyenne utilisation TV:
+#   formule: 0%
 
-visio . terminaux . construction:
-  valeur: construction réelle
-  contexte:
-    appareil par défaut: visio . appareil
-    durée en heure par défaut: visio . appareil . durée totale sollicitation
-    moyenne utilisation ordinateur et écran par défaut: visio . appareil . moyenne utilisation ordinateur et écran
-    moyenne utilisation ordinateur portable par défaut: visio . appareil . moyenne utilisation ordinateur portable
-    moyenne utilisation tablette par défaut: visio . appareil . moyenne utilisation tablette
-    moyenne utilisation smartphone par défaut: visio . appareil . moyenne utilisation smartphone
-    moyenne utilisation TV par défaut: visio . appareil . moyenne utilisation TV
-  unité: gCO2e
+# visio . terminaux . construction:
+#   valeur: construction réelle
+#   contexte:
+#     appareil par défaut: visio . appareil
+#     durée en heure par défaut: visio . appareil . durée totale sollicitation
+#     moyenne utilisation ordinateur et écran par défaut: visio . appareil . moyenne utilisation ordinateur et écran
+#     moyenne utilisation ordinateur portable par défaut: visio . appareil . moyenne utilisation ordinateur portable
+#     moyenne utilisation tablette par défaut: visio . appareil . moyenne utilisation tablette
+#     moyenne utilisation smartphone par défaut: visio . appareil . moyenne utilisation smartphone
+#     moyenne utilisation TV par défaut: visio . appareil . moyenne utilisation TV
+#   unité: gCO2e
 
-visio . terminaux . usage:
-  valeur: usage réel
-  contexte:
-    appareil par défaut: visio . appareil
-    durée en heure par défaut: visio . appareil . durée totale sollicitation
-    moyenne utilisation ordinateur et écran par défaut: visio . appareil . moyenne utilisation ordinateur et écran
-    moyenne utilisation ordinateur portable par défaut: visio . appareil . moyenne utilisation ordinateur portable
-    moyenne utilisation tablette par défaut: visio . appareil . moyenne utilisation tablette
-    moyenne utilisation smartphone par défaut: visio . appareil . moyenne utilisation smartphone
-    moyenne utilisation TV par défaut: visio . appareil . moyenne utilisation TV
-  unité: gCO2e
+# visio . terminaux . usage:
+#   valeur: usage réel
+#   contexte:
+#     appareil par défaut: visio . appareil
+#     durée en heure par défaut: visio . appareil . durée totale sollicitation
+#     moyenne utilisation ordinateur et écran par défaut: visio . appareil . moyenne utilisation ordinateur et écran
+#     moyenne utilisation ordinateur portable par défaut: visio . appareil . moyenne utilisation ordinateur portable
+#     moyenne utilisation tablette par défaut: visio . appareil . moyenne utilisation tablette
+#     moyenne utilisation smartphone par défaut: visio . appareil . moyenne utilisation smartphone
+#     moyenne utilisation TV par défaut: visio . appareil . moyenne utilisation TV
+#   unité: gCO2e
 
-visio . réseau:
-  titre: Type de réseau utilisé
-  question: Utilisez-vous le réseau fixe ou mobile ?
-  avec:
-    fixe FR:
-      titre: Réseau fixe en France
-    mobile FR:
-      titre: Réseau mobile en France
-    fixe EU:
-      titre: Réseau fixe en Europe
-    mobile EU:
-      titre: Réseau mobile en Europe
-  une possibilité:
-    - fixe FR
-    - mobile FR
-    - fixe EU
-    - mobile EU
-  par défaut: "'fixe FR'"
+# visio . réseau:
+#   titre: Type de réseau utilisé
+#   question: Utilisez-vous le réseau fixe ou mobile ?
+#   avec:
+#     fixe:
+#       titre: Réseau fixe
+#     mobile:
+#       titre: Réseau mobile
+#   une possibilité:
+#     - fixe
+#     - mobile
+#   par défaut: "'fixe'"
 
-visio . transmission:
-  valeur: transmission par défaut
-  contexte:
-    transmission par défaut . taille par défaut: visio . emplacements * visio . taille
-    transmission par défaut . réseau par défaut: visio . réseau
-  unité: gCO2e
+# visio . transmission:
+#   valeur: transmission par défaut
+#   contexte:
+#     transmission par défaut . taille par défaut: visio . emplacements * visio . taille
+#     transmission par défaut . réseau par défaut: visio . réseau
+#   unité: gCO2e
 
-visio . data center:
-  formule:
-    somme:
-      - visio . data center . construction
-      - visio . data center . transport
-      - visio . data center . usage
-      - visio . data center . fin de vie
-  unité: gCO2e
+# visio . data center:
+#   formule:
+#     somme:
+#       - visio . data center . construction
+#       - visio . data center . transport
+#       - visio . data center . usage
+#       - visio . data center . fin de vie
+#   unité: gCO2e
 
+# visio . data center . facteur d'allocation:
+#   formule: visio . durée en heure * data center . nombre de serveur
+#   unité: serveur.an
 
-visio . data center . facteur d'allocation:
-  formule: visio . durée en heure * data center . nombre de serveur
-  unité: serveur.an
+# visio . data center . construction:
+#   formule: visio . data center . facteur d'allocation * visio . data center . construction unitaire
+#   unité: gCO2e
 
+# visio . data center . transport:
+#   formule: visio . data center . facteur d'allocation * visio . data center . transport unitaire
+#   unité: gCO2e
 
-visio . data center . construction:
-  formule: visio . data center . facteur d'allocation * visio . data center . construction unitaire
-  unité: gCO2e
+# visio . data center . usage:
+#   formule: visio . durée en heure * visio . data center . usage unitaire
+#   unité: gCO2e
 
+# visio . data center . fin de vie:
+#   formule: visio . data center . facteur d'allocation * visio . data center . fin de vie unitaire
+#   unité: gCO2e
 
-visio . data center . transport:
-  formule: visio . data center . facteur d'allocation * visio . data center . transport unitaire
-  unité: gCO2e
+# visio . data center . part cloud:
+#   formule: 75%
 
+# visio . data center . part en propre:
+#   formule: 100% - visio . data center . part cloud
 
-visio . data center . usage:
-  formule: visio . durée en heure * visio . data center . usage unitaire
-  unité: gCO2e
+# visio . data center . construction unitaire:
+#   formule: (visio . data center . part en propre * data center . origine en propre . construction) + (visio . data center . part cloud * data center . origine en cloud . construction)
+#   unité: gCO2e/serveur.an
 
+# visio . data center . transport unitaire:
+#   formule: (visio . data center . part en propre * data center . origine en propre . transport) + (visio . data center . part cloud * data center . origine en cloud . transport)
+#   unité: gCO2e/serveur.an
 
-visio . data center . fin de vie:
-  formule: visio . data center . facteur d'allocation * visio . data center . fin de vie unitaire
-  unité: gCO2e
+# visio . data center . fin de vie unitaire:
+#   formule: (visio . data center . part en propre * data center . origine en propre . fin de vie) + (visio . data center . part cloud * data center . origine en cloud . fin de vie)
+#   unité: gCO2e/serveur.an
 
+# visio . data center . usage unitaire:
+#   formule: (visio . data center . part en propre * data center . origine en propre . usage) + (visio . data center . part cloud * data center . origine en cloud . usage)
+#   unité: gCO2e/h
 
-visio . data center . part cloud:
-  formule: 75%
-
-
-visio . data center . part en propre:
-  formule: 100% - visio . data center . part cloud
-
-
-visio . data center . construction unitaire:
-  formule: (visio . data center . part en propre * data center . origine en propre . construction) + (visio . data center . part cloud * data center . origine en cloud . construction)
-  unité: gCO2e/serveur.an
-
-
-visio . data center . transport unitaire:
-  formule: (visio . data center . part en propre * data center . origine en propre . transport) + (visio . data center . part cloud * data center . origine en cloud . transport)
-  unité: gCO2e/serveur.an
-
-
-visio . data center . fin de vie unitaire:
-  formule: (visio . data center . part en propre * data center . origine en propre . fin de vie) + (visio . data center . part cloud * data center . origine en cloud . fin de vie)
-  unité: gCO2e/serveur.an
-
-
-visio . data center . usage unitaire:
-  formule: (visio . data center . part en propre * data center . origine en propre . usage) + (visio . data center . part cloud * data center . origine en cloud . usage)
-  unité: gCO2e/h
-
-
-visio . content delivery network:
-  formule: visio . emplacements * visio . taille * content delivery network
-  unité: gCO2e
-  
-  
+# visio . content delivery network:
+#   formule: visio . emplacements * visio . taille * content delivery network
+#   unité: gCO2e

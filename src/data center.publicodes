@@ -1,89 +1,93 @@
-data center:
-  unité: gCO2e
-  note: par heure
-
-data center . consommation électrique:
-  formule: 0.68
-  unité: Wh/h
-
-data center . nombre de serveur:
-  formule: 0.000000212181573260480
-  unité: serveur.an/h
-
-data center . origine en propre:
+data center par défaut:
   formule:
     somme:
-      - data center . origine en propre . construction
-      - data center . origine en propre . transport
-      - data center . origine en propre . usage
-      - data center . origine en propre . fin de vie
+      - data center origine en propre France * (1 - part cloud)
+      - data center origine en cloud dont étranger * part cloud
+      - cdn
   unité: gCO2e
 
-data center . origine en propre . construction:
+data center par défaut . part cloud:
+  formule: 75%
+
+data center par défaut . taille par défaut:
+  formule: 50 Mo / 1000 Mo/Go
+  unité: Go
+
+data center par défaut . data center origine en propre France:
+  formule:
+    somme:
+      - construction
+      - transport
+      - usage
+      - fin de vie
+  unité: gCO2e
+
+data center par défaut . data center origine en propre France . construction:
   formule: 0.11685
   unité: gCO2e
 
-data center . origine en propre . transport:
+data center par défaut . data center origine en propre France . transport:
   formule: 0.00564
   unité: gCO2e
 
-data center . origine en propre . usage:
+data center par défaut . data center origine en propre France . usage:
   formule: 0.04547
   unité: gCO2e
 
-data center . origine en propre . fin de vie:
+data center par défaut . data center origine en propre France . fin de vie:
   formule: 0.00420
   unité: gCO2e
 
-data center . origine en cloud:
+data center par défaut . data center origine en cloud dont étranger:
   formule:
     somme:
-      - data center . origine en cloud . construction
-      - data center . origine en cloud . transport
-      - data center . origine en cloud . usage
-      - data center . origine en cloud . fin de vie
+      - construction
+      - transport
+      - usage
+      - fin de vie
   unité: gCO2e
 
-data center . origine en cloud . construction:
+data center par défaut . data center origine en cloud dont étranger . construction:
   formule: 0.11685
   unité: gCO2e
 
-data center . origine en cloud . transport:
+data center par défaut . data center origine en cloud dont étranger . transport:
   formule: 0.00564
   unité: gCO2e
 
-data center . origine en cloud . usage:
+data center par défaut . data center origine en cloud dont étranger . usage:
   formule: 0.24121
   unité: gCO2e
 
-data center . origine en cloud . fin de vie:
+data center par défaut . data center origine en cloud dont étranger . fin de vie:
   formule: 0.00420
   unité: gCO2e
 
-data center . origine en cloud . pourcentage FR:
-  formule: 30%
-
-data center . origine en cloud . pourcentage US:
-  formule: 35%
-
-data center . part cloud:
-  formule: 75%
-
-data center . part en propre:
-  formule: 100% - data center . part cloud
-
-data center . impact moyen:
+data center par défaut . cdn:
   formule:
-    somme:
-      - data center . impact moyen . en propre
-      - data center . impact moyen . cloud
+    produit:
+      - somme:
+          - construction
+          - transport
+          - usage
+          - fin de vie
+      - taille par défaut
   unité: gCO2e
 
-data center . impact moyen . en propre:
-  formule: data center . part en propre * data center . origine en propre
-  unité: gCO2e
+data center par défaut . cdn . construction:
+  formule: 0.56529
+  unité: gCO2e/Go
 
-data center . impact moyen . cloud:
-  formule: data center . part cloud * data center . origine en cloud
-  unité: gCO2e
-  
+data center par défaut . cdn . transport:
+  formule: 0.01065
+  unité: gCO2e/Go
+
+data center par défaut . cdn . usage:
+  formule: 0.02888
+  unité: gCO2e/Go
+
+data center par défaut . cdn . fin de vie:
+  formule: 0.00809
+  unité: gCO2e/Go
+
+data center par défaut . nombre de serveur: 0
