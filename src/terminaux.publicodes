@@ -19,6 +19,10 @@ construction réelle:
         alors: TV
       - si: appareil par défaut = 'ordinateur et écran'
         alors: ordinateur et écran
+      - si: appareil par défaut = 'videoprojecteur'
+        alors: videoprojecteur
+      - si: appareil par défaut = 'smart TV'
+        alors: smart TV
       - si: appareil par défaut = 'moyenne'
         alors: moyenne
   reference: |
@@ -33,6 +37,8 @@ construction réelle . moyenne:
       - moyenne utilisation tablette par défaut * tablette
       - moyenne utilisation smartphone par défaut * smartphone
       - moyenne utilisation TV par défaut * TV
+      - moyenne utilisation videoprojecteur par défaut * videoprojecteur
+      - moyenne utilisation smart TV par défaut * smart TV
 
 construction réelle . smartphone:
   formule: smartphone . construction * (durée en heure par défaut / smartphone . durée d'usage)
@@ -48,6 +54,12 @@ construction réelle . TV:
 
 construction réelle . ordinateur et écran:
   formule: ordinateur et écran . construction * (durée en heure par défaut / ordinateur et écran . durée d'usage)
+
+construction réelle . videoprojecteur:
+  formule: videoprojecteur . construction * (durée en heure par défaut / videoprojecteur . durée d'usage)
+
+construction réelle . smart TV:
+  formule: smart TV . construction * (durée en heure par défaut / smart TV . durée d'usage)
 
 usage réel:
   formule: consommation électricité * facteur électricité
@@ -98,6 +110,10 @@ usage réel . consommation électricité par heure:
         alors: ordinateur et écran . consommation en mode actif
       - si: appareil par défaut = 'TV'
         alors: acv . TV . consommation en mode actif
+      - si: appareil par défaut = 'videoprojecteur'
+        alors: acv . videoprojecteur . consommation en mode actif
+      - si: appareil par défaut = 'smart TV'
+        alors: acv . smart TV . consommation en mode actif
       - sinon: consommation en mode actif moyenne
   unité: W
 
@@ -109,6 +125,8 @@ usage réel . consommation en mode actif moyenne:
       - moyenne utilisation tablette par défaut * acv . tablette . consommation en mode actif
       - moyenne utilisation smartphone par défaut * acv . smartphone . consommation en mode actif
       - moyenne utilisation TV par défaut * acv . TV . consommation en mode actif
+      - moyenne utilisation videoprojecteur par défaut * acv . videoprojecteur . consommation en mode actif
+      - moyenne utilisation smart TV par défaut * acv . smart TV . consommation en mode actif
 
 appareil par défaut:
   par défaut: "'moyenne'"
@@ -116,23 +134,19 @@ durée en heure par défaut:
   par défaut: 0
   unité: h
 moyenne utilisation ordinateur et écran par défaut:
-  par défaut: 0
-  unité: "%"
+  par défaut: 0%
 moyenne utilisation ordinateur portable par défaut:
-  par défaut: 0
-  unité: "%"
+  par défaut: 0%
 moyenne utilisation tablette par défaut:
-  par défaut: 0
-  unité: "%"
+  par défaut: 0%
 moyenne utilisation smartphone par défaut:
-  par défaut: 0
-  unité: "%"
+  par défaut: 0%
 moyenne utilisation TV par défaut:
-  par défaut: 0
-  unité: "%"
+  par défaut: 0%
 moyenne utilisation videoprojecteur par défaut:
-  par défaut: 0
-  unité: "%"
+  par défaut: 0%
+moyenne utilisation smart TV par défaut:
+  par défaut: 0%
 
 smartphone:
 smartphone . construction:
@@ -298,3 +312,53 @@ ordinateur et écran . consommation en mode actif:
       - acv . ordinateur fixe . consommation en mode actif
       - acv . écran . consommation en mode actif
   unité: W
+
+videoprojecteur:
+videoprojecteur . construction:
+  formule:
+    somme:
+      - acv . videoprojecteur . carbone . fabrication
+      - acv . videoprojecteur . carbone . distribution
+      - acv . videoprojecteur . carbone . fin de vie
+  unité: gCO2e
+
+videoprojecteur . durée d'usage:
+  formule: publicodes-commun . jours par an * durée de vie * profil utilisation
+  unité: h
+
+videoprojecteur . durée de vie:
+  titre: Durée de vie videoprojecteur
+  question: Quelle est la durée de vie du videoprojecteur ?
+  unité: an
+  par défaut: acv . videoprojecteur . durée de vie théorique
+
+videoprojecteur . profil utilisation:
+  titre: Profil d'utilisation videoprojecteur
+  question: Quelle est le profil d'utilisation du videoprojecteur ?
+  unité: h/jour
+  par défaut: acv . videoprojecteur . profil utilisation théorique
+
+smart TV:
+smart TV . construction:
+  formule:
+    somme:
+      - acv . smart TV . carbone . fabrication
+      - acv . smart TV . carbone . distribution
+      - acv . smart TV . carbone . fin de vie
+  unité: gCO2e
+
+smart TV . durée d'usage:
+  formule: publicodes-commun . jours par an * durée de vie * profil utilisation
+  unité: h
+
+smart TV . durée de vie:
+  titre: Durée de vie smart TV
+  question: Quelle est la durée de vie de la smart TV ?
+  unité: an
+  par défaut: acv . smart TV . durée de vie théorique
+
+smart TV . profil utilisation:
+  titre: Profil d'utilisation smart TV
+  question: Quelle est le profil d'utilisation de la smart TV ?
+  unité: h/jour
+  par défaut: acv . smart TV . profil utilisation théorique

@@ -59,8 +59,8 @@ email . nombre de mails envoyés et reçus par jour et par personne:
 email . terminaux:
   formule:
     somme:
-      - email . terminaux . construction
-      - email . terminaux . usage
+      - construction
+      - usage
   unité: gCO2e
 
 email . appareil:

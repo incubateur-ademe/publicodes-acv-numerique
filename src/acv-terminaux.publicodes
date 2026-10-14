@@ -801,7 +801,6 @@ acv . videoprojecteur:
   titre: Videoprojecteur
   description: videoprojecteur ou retroprojecteur
 acv . videoprojecteur . carbone:
-
 acv . videoprojecteur . carbone . fabrication:
   formule: 39200
   unité: gCO2e
@@ -824,5 +823,34 @@ acv . videoprojecteur . profil utilisation théorique:
   formule: 0.5
   unité: h/jour
 acv . videoprojecteur . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . smart TV:
+  titre: Smart TV
+  description: Téléviseur intelligent
+acv . smart TV . carbone:
+acv . smart TV . carbone . fabrication:
+  formule: 542326
+  unité: gCO2e
+acv . smart TV . carbone . distribution:
+  formule: 2913
+  unité: gCO2e
+acv . smart TV . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . smart TV . carbone . fin de vie:
+  formule: 10058
+  unité: gCO2e
+acv . smart TV . durée de vie théorique:
+  formule: 7
+  unité: an
+acv . smart TV . consommation en mode actif:
+  formule: 141.1
+  unité: W
+acv . smart TV . profil utilisation théorique:
+  formule: 4
+  unité: h/jour
+acv . smart TV . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
