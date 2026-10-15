@@ -1,8 +1,23 @@
-# Ce fichier contient des exemples de situations (à l'image d'un jeu de réponse pour votre modèle de calcul). Elles sont utiles pour les tests notamment.
-# Pour le moment, il est uniquement utilisé par la commande "publicodes dev"
-
-mail lourd envoyé depuis un smartphone:
+streaming harry potter:
   contexte:
-    email . taille: 5
-    email . destinataires: 1
-    email . appareil: "'smartphone'"
+    streaming . durée: 1176 minute
+    streaming . qualité: "'HD'"
+    streaming . appareil: "'TV'"
+    streaming . réseau: "'fixe'"
+  hypothèse: L'ensemble des films d'Harry Potter dure en moyenne 1176 minutes = 19,6 heures. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
+
+streaming game of thrones:
+  contexte:
+    streaming . durée: 5192 minute
+    streaming . qualité: "'HD'"
+    streaming . appareil: "'TV'"
+    streaming . réseau: "'fixe'"
+  hypothèse: Un épisode de Game of Thrones dure en moyenne 1 h. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
+
+streaming friends:
+  contexte:
+    streaming . durée: 5192 minute
+    streaming . qualité: "'HD'"
+    streaming . appareil: "'TV'"
+    streaming . réseau: "'fixe'"
+  hypothèse: L'intégrale de Friends est composée de 236 épisodes d'en moyenne 22 minutes. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
