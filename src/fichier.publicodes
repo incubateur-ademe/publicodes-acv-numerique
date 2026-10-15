@@ -110,25 +110,3 @@ fichier . data center:
   contexte:
     data center par défaut . taille par défaut: fichier . taille
   unité: gCO2e
-
-# fichier . content delivery network:
-#   formule: fichier . taille * content delivery network
-#   unité: gCO2e
-
-# fichier . contrôle:
-
-# fichier . contrôle . durée:
-#   formule: 0.0202020 h
-
-# fichier . contrôle . durée en minute:
-#   formule: fichier . contrôle . durée * 60 minute/h
-#   unité: minute
-
-# fichier . contrôle . transmission réseau mobile:
-#   formule: 0.0095716 gCO2e/Go
-
-# fichier . contrôle . data center construction:
-#   formule: 0.00017216 gCO2e
-
-# fichier . contrôle . CDN:
-#   formule: 0.000632 gCO2e/Go
