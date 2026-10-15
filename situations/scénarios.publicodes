@@ -1,11 +1,23 @@
-# Ce fichier contient des exemples de situations (à l'image d'un jeu de réponse pour votre modèle de calcul). Elles sont utiles pour les tests notamment.
-# Pour le moment, il est uniquement utilisé par la commande "publicodes dev"
+streaming harry potter:
+  contexte:
+    streaming . durée: 1176 minute
+    streaming . qualité: "'HD'"
+    streaming . appareil: "'TV'"
+    streaming . réseau: "'fixe'"
+  hypothèse: L'ensemble des films d'Harry Potter dure en moyenne 1176 minutes = 19,6 heures. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
 
-# salaire SMIC:
-#   contexte:
-#     salaire brut: SMIC mensuel
+streaming game of thrones:
+  contexte:
+    streaming . durée: 5192 minute
+    streaming . qualité: "'HD'"
+    streaming . appareil: "'TV'"
+    streaming . réseau: "'fixe'"
+  hypothèse: Un épisode de Game of Thrones dure en moyenne 1 h. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi
 
-# salaire médian cadre:
-#   contexte:
-#     salaire brut: 2600 €/mois
-#     cotisations salariales . taux: 25%
+streaming friends:
+  contexte:
+    streaming . durée: 5192 minute
+    streaming . qualité: "'HD'"
+    streaming . appareil: "'TV'"
+    streaming . réseau: "'fixe'"
+  hypothèse: L'intégrale de Friends est composée de 236 épisodes d'en moyenne 22 minutes. La donnée est calculée sur une heure de streaming en haute définition, sur une télévision, en connexion Wi-Fi

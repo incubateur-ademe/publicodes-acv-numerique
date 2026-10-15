@@ -8,30 +8,30 @@ acv:
 acv . smartphone:
   titre: Smartphone
   description: |
-    Smartphone; average configuration: 6,61 inches screen mix of LCD and OLED technologies, 7,3 GB RAM, 180 GB memory, 2,5 years lifespan
+    Smartphone - moyen
 acv . smartphone . carbone:
 acv . smartphone . eau:
 
 acv . smartphone . carbone . fabrication:
-  formule: 77000
+  formule: 54330
   unité: gCO2e
 acv . smartphone . eau . fabrication:
-  formule: 75100
+  formule: 25092
   unité: l
 acv . smartphone . carbone . distribution:
-  formule: 2270
+  formule: 1071
   unité: gCO2e
 acv . smartphone . eau . distribution:
-  formule: 11.8
+  formule: 5.6
   unité: l
 acv . smartphone . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . smartphone . carbone . fin de vie:
-  formule: 246
+  formule: 865
   unité: gCO2e
 acv . smartphone . eau . fin de vie:
-  formule: 58300
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . smartphone . durée de vie théorique:
@@ -50,30 +50,30 @@ acv . smartphone . consommation annuelle:
 acv . tablette:
   titre: Tablette
   description: |
-    Tablet; average configuration: 10.44 inches screen mix of LCD screen, 4 GB RAM, 121 GB memory, 3 years lifespan;
+    Tablette - moyen
 acv . tablette . carbone:
 acv . tablette . eau:
 
 acv . tablette . carbone . fabrication:
-  formule: 80500
+  formule: 55853
   unité: gCO2e
 acv . tablette . eau . fabrication:
-  formule: 110000
+  formule: 25961
   unité: l
 acv . tablette . carbone . distribution:
-  formule: 3430
+  formule: 3006
   unité: gCO2e
 acv . tablette . eau . distribution:
-  formule: 17.8
+  formule: 15.6
   unité: l
 acv . tablette . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . tablette . carbone . fin de vie:
-  formule: 364
+  formule: 2624
   unité: gCO2e
 acv . tablette . eau . fin de vie:
-  formule: 61600
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . tablette . durée de vie théorique:
@@ -91,31 +91,32 @@ acv . tablette . consommation annuelle:
   unité: kWh/an
 
 acv . ordinateur portable:
+  titre: Ordinateur portable
   description: |
-    Laptop; average configuration: 14,6 inches screen, 1 CPU, 11 GB RAM, 497 GB SSD, 5 years lifespan;
+    Laptop - moyen
 acv . ordinateur portable . carbone:
 acv . ordinateur portable . eau:
 
 acv . ordinateur portable . carbone . fabrication:
-  formule: 170000
+  formule: 142892
   unité: gCO2e
 acv . ordinateur portable . eau . fabrication:
-  formule: 194000
+  formule: 147735
   unité: l
 acv . ordinateur portable . carbone . distribution:
-  formule: 12300
+  formule: 8309
   unité: gCO2e
 acv . ordinateur portable . eau . distribution:
-  formule: 51.6
+  formule: 34.7
   unité: l
 acv . ordinateur portable . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur portable . carbone . fin de vie:
-  formule: 2790
+  formule: 2206
   unité: gCO2e
 acv . ordinateur portable . eau . fin de vie:
-  formule: 638000
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . ordinateur portable . durée de vie théorique:
@@ -133,31 +134,32 @@ acv . ordinateur portable . consommation annuelle:
   unité: kWh/an
 
 acv . TV:
+  titre: Télévision
   description: |
-    Television; use mix, personal use; average dimension (48 inches) and technology (86.7% LCD, 13.3% OLED), 8 years lifespan
+    TV - moyen
 acv . TV . carbone:
 acv . TV . eau:
 
 acv . TV . carbone . fabrication:
-  formule: 325000
+  formule: 685013
   unité: gCO2e
 acv . TV . eau . fabrication:
-  formule: 869000
+  formule: 2887335
   unité: l
 acv . TV . carbone . distribution:
-  formule: 3260
+  formule: 2909
   unité: gCO2e
 acv . TV . eau . distribution:
-  formule: 10.6
+  formule: 9.5
   unité: l
 acv . TV . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . TV . carbone . fin de vie:
-  formule: 11900
+  formule: 14048
   unité: gCO2e
 acv . TV . eau . fin de vie:
-  formule: 1290000
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . TV . durée de vie théorique:
@@ -176,30 +178,30 @@ acv . TV . consommation annuelle:
 acv . ordinateur fixe:
   titre: Ordinateur fixe (sans écran) personnel
   description: |
-    Desktop; personal use; average configuration: 1 CPU, 10 GB RAM, 1173 GB HDD, 442 GB SSD, mix of integrated or separated graphic card, 6 years lifespan;
+    Ordinateur fixe - moyen
 acv . ordinateur fixe . carbone:
 acv . ordinateur fixe . eau:
 
 acv . ordinateur fixe . carbone . fabrication:
-  formule: 259000
+  formule: 384036
   unité: gCO2e
 acv . ordinateur fixe . eau . fabrication:
-  formule: 81900
+  formule: 158456
   unité: l
 acv . ordinateur fixe . carbone . distribution:
-  formule: 2940
+  formule: 2517
   unité: gCO2e
 acv . ordinateur fixe . eau . distribution:
-  formule: 9.57
+  formule: 8.2
   unité: l
 acv . ordinateur fixe . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur fixe . carbone . fin de vie:
-  formule: 6610
+  formule: 4204
   unité: gCO2e
 acv . ordinateur fixe . eau . fin de vie:
-  formule: 2070000
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . ordinateur fixe . durée de vie théorique:
@@ -218,30 +220,30 @@ acv . ordinateur fixe . consommation annuelle:
 acv . ordinateur fixe pro:
   titre: Ordinateur fixe (sans écran) professionnel
   description: |
-    Desktop; profesional use; average configuration: 8 GB RAM, 1000 GB HDD, 256 GB SSD, separated graphic card, 6 years lifespan;
+    Ordinateur fixe - moyen
 acv . ordinateur fixe pro . carbone:
 acv . ordinateur fixe pro . eau:
 
 acv . ordinateur fixe pro . carbone . fabrication:
-  formule: 203000
+  formule: 384036
   unité: gCO2e
 acv . ordinateur fixe pro . eau . fabrication:
-  formule: 66200
+  formule: 158456
   unité: l
 acv . ordinateur fixe pro . carbone . distribution:
-  formule: 1850
+  formule: 2517
   unité: gCO2e
 acv . ordinateur fixe pro . eau . distribution:
-  formule: 6.02
+  formule: 8.2
   unité: l
 acv . ordinateur fixe pro . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur fixe pro . carbone . fin de vie:
-  formule: 6610
+  formule: 4204
   unité: gCO2e
 acv . ordinateur fixe pro . eau . fin de vie:
-  formule: 2070000
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . ordinateur fixe pro . durée de vie théorique:
@@ -260,30 +262,30 @@ acv . ordinateur fixe pro . consommation annuelle:
 acv . écran:
   titre: Ecran d'ordinateur
   description: |
-    Computer monitors; average dimension (24 inches) and technology (98.6% LCD, 1.4% OLED), 6,6 years lifespan;
+    Ecran d'ordinateur - moyen
 acv . écran . carbone:
 acv . écran . eau:
 
 acv . écran . carbone . fabrication:
-  formule: 64600
+  formule: 65065
   unité: gCO2e
 acv . écran . eau . fabrication:
-  formule: 58300
+  formule: 37941
   unité: l
 acv . écran . carbone . distribution:
-  formule: 1290
+  formule: 1353
   unité: gCO2e
 acv . écran . eau . distribution:
-  formule: 4.2
+  formule: 4.4
   unité: l
 acv . écran . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . écran . carbone . fin de vie:
-  formule: 3950
+  formule: 4898
   unité: gCO2e
 acv . écran . eau . fin de vie:
-  formule: 677000
+  formule: 0
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . écran . durée de vie théorique:
@@ -405,30 +407,31 @@ acv . manette casque de réalité virtuelle . consommation annuelle:
 
 acv . enceinte:
   titre: Enceinte connectée
-  description: Chiffres issus d'un rapport précédent à la v2.0.0 de la Base Empreinte.
+  description: |
+    Enceinte sans fil
 acv . enceinte . carbone:
 acv . enceinte . eau:
 
 acv . enceinte . carbone . fabrication:
-  formule: 19500
+  formule: 75552
   unité: gCO2e
 acv . enceinte . eau . fabrication:
-  formule: 4410
+  formule: 31247
   unité: l
 acv . enceinte . carbone . distribution:
-  formule: 300
+  formule: 223
   unité: gCO2e
 acv . enceinte . eau . distribution:
-  formule: 5
+  formule: 12.1
   unité: l
 acv . enceinte . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . enceinte . carbone . fin de vie:
-  formule: 700
+  formule: 1306
   unité: gCO2e
 acv . enceinte . eau . fin de vie:
-  formule: 112000
+  formule: 32.9
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . enceinte . durée de vie théorique:
@@ -528,7 +531,8 @@ acv . console portable . consommation annuelle:
 
 acv . imprimante:
   titre: Imprimante
-  description: Chiffres issus d'un rapport précédent à la v2.0.0 de la Base Empreinte.
+  description: |
+    Imprimante laser personnelle
 acv . imprimante . carbone:
 acv . imprimante . eau:
 
@@ -570,7 +574,7 @@ acv . imprimante . consommation annuelle:
 acv . chargeur ordinateur:
   titre: Alimentation - Externe ordinateur portable
   description: |
-    External power supply (EPS); use mix; for laptop, input AC 100-240V, output DC 19-20V;
+    Alimentation - Externe ordinateur portable (2014)
 acv . chargeur ordinateur . carbone:
 acv . chargeur ordinateur . eau:
 
@@ -601,7 +605,7 @@ acv . chargeur ordinateur . eau . fin de vie:
 acv . chargeur smartphone:
   titre: Alimentation - Externe smartphone et tablette
   description: |
-    External power supply (EPS); use mix; for smartphone and tablet, input AC 100-240V, output DC 5-20V;
+    Alimentation - Externe smartphone et tablette (2014)
 acv . chargeur smartphone . carbone:
 acv . chargeur smartphone . eau:
 
@@ -632,7 +636,7 @@ acv . chargeur smartphone . eau . fin de vie:
 acv . clé USB:
   titre: Clé USB
   description: |
-    USB key; use mix; average capacity (59.2 Go), 5 years lifespan; RAS
+    Clef USB (2020)
 acv . clé USB . carbone:
 acv . clé USB . eau:
 
@@ -674,7 +678,7 @@ acv . clé USB . consommation annuelle:
 acv . disque dur externe:
   titre: Disque dur externe
   description: |
-    External Hard Disk Drive (HDD); use mix; average capacity (1700 GB), 5 years lifespan;
+    Disque dur externe (2020)
 acv . disque dur externe . carbone:
 acv . disque dur externe . eau:
 
@@ -716,7 +720,7 @@ acv . disque dur externe . consommation annuelle:
 acv . SSD externe:
   titre: SSD externe
   description: |
-    External Solid State Drive (SSD); use mix; average capacity (870 GB), 5 years lifespan;
+    SSB externe (2020)
 acv . SSD externe . carbone:
 acv . SSD externe . eau:
 
@@ -758,7 +762,7 @@ acv . SSD externe . consommation annuelle:
 acv . box:
   titre: Box
   description: |
-    Modem; use mix, personal and professional use; xDSL, FTTx, 5 years lifespan; RAS
+    Box (2018)
 acv . box . carbone:
 acv . box . eau:
 
@@ -799,7 +803,8 @@ acv . box . consommation annuelle:
 
 acv . videoprojecteur:
   titre: Videoprojecteur
-  description: videoprojecteur ou retroprojecteur
+  description: |
+    Vidéo projecteur
 acv . videoprojecteur . carbone:
 acv . videoprojecteur . carbone . fabrication:
   formule: 39200
