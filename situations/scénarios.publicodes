@@ -8,7 +8,7 @@ streaming harry potter:
 
 streaming game of thrones:
   contexte:
-    streaming . durée: 5192 minute
+    streaming . durée: 60 minute
     streaming . qualité: "'HD'"
     streaming . appareil: "'TV'"
     streaming . réseau: "'fixe'"
