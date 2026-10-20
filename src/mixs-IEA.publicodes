@@ -10,17 +10,16 @@ importer!:
 
 électricité . FE France:
   formule: publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e
-  # formule: 66.96
   unité: gCO2e/kWh
 
 électricité . FE Europe:
-  formule: 410.4
+  formule: 172
   unité: gCO2e/kWh
 
 électricité . FE Chine:
-  formule: 871.2
+  formule: 532
   unité: gCO2e/kWh
 
 électricité . FE USA:
-  formule: 547.2
+  formule: 327
   unité: gCO2e/kWh
