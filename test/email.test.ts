@@ -29,7 +29,7 @@ describe("Envoi d'un mail", () => {
       réseau: "fixe",
     });
     const result = engine.evaluate("email");
-    expect(result.nodeValue).toBeCloseTo(2.98, 0);
+    expect(result.nodeValue).toBeCloseTo(2.42, 0);
   });
 
   test("Rédiger, envoyer et lire 1 mail de 1Mo (pièce jointe) à 5 destinataires via une connexion mobile", () => {
@@ -40,6 +40,6 @@ describe("Envoi d'un mail", () => {
     });
     const result = engine.evaluate("email");
 
-    expect(result.nodeValue).toBeCloseTo(3.07, 0);
+    expect(result.nodeValue).toBeCloseTo(2.48, 0);
   });
 });

@@ -38,7 +38,7 @@ acv . smartphone . durée de vie théorique:
   formule: 2.5
   unité: an
 acv . smartphone . consommation en mode actif:
-  formule: 3.85
+  formule: 6.4
   unité: W
 acv . smartphone . profil utilisation théorique:
   formule: 3.9
@@ -80,7 +80,7 @@ acv . tablette . durée de vie théorique:
   formule: 3
   unité: an
 acv . tablette . consommation en mode actif:
-  formule: 15
+  formule: 22.1
   unité: W
 acv . tablette . profil utilisation théorique:
   description: Usage personnel
@@ -123,11 +123,11 @@ acv . ordinateur portable . durée de vie théorique:
   formule: 5
   unité: an
 acv . ordinateur portable . consommation en mode actif:
-  formule: 25
+  formule: 34.5
   unité: W
 acv . ordinateur portable . profil utilisation théorique:
   description: Usage personnel
-  formule: 2.42
+  formule: 3.45
   unité: h/jour
 acv . ordinateur portable . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
@@ -166,7 +166,7 @@ acv . TV . durée de vie théorique:
   formule: 7
   unité: an
 acv . TV . consommation en mode actif:
-  formule: 65
+  formule: 150
   unité: W
 acv . TV . profil utilisation théorique:
   formule: 4
@@ -208,7 +208,7 @@ acv . ordinateur fixe . durée de vie théorique:
   formule: 6
   unité: an
 acv . ordinateur fixe . consommation en mode actif:
-  formule: 50
+  formule: 238.7
   unité: W
 acv . ordinateur fixe . profil utilisation théorique:
   formule: 3.45
@@ -225,32 +225,32 @@ acv . ordinateur fixe pro . carbone:
 acv . ordinateur fixe pro . eau:
 
 acv . ordinateur fixe pro . carbone . fabrication:
-  formule: 384036
+  formule: ordinateur fixe . carbone . fabrication
   unité: gCO2e
 acv . ordinateur fixe pro . eau . fabrication:
-  formule: 158456
+  formule: ordinateur fixe . eau . fabrication
   unité: l
 acv . ordinateur fixe pro . carbone . distribution:
-  formule: 2517
+  formule: ordinateur fixe . carbone . distribution
   unité: gCO2e
 acv . ordinateur fixe pro . eau . distribution:
-  formule: 8.2
+  formule: ordinateur fixe . eau . distribution
   unité: l
 acv . ordinateur fixe pro . carbone . usage théorique:
   formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
   unité: gCO2e
 acv . ordinateur fixe pro . carbone . fin de vie:
-  formule: 4204
+  formule: ordinateur fixe . carbone . fin de vie
   unité: gCO2e
 acv . ordinateur fixe pro . eau . fin de vie:
-  formule: 0
+  formule: ordinateur fixe . eau . fin de vie
   unité: l
   note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
 acv . ordinateur fixe pro . durée de vie théorique:
-  formule: 6
+  formule: ordinateur fixe . durée de vie théorique
   unité: an
 acv . ordinateur fixe pro . consommation en mode actif:
-  formule: 50
+  formule: ordinateur fixe . consommation en mode actif
   unité: W
 acv . ordinateur fixe pro . profil utilisation théorique:
   formule: 6
@@ -292,12 +292,54 @@ acv . écran . durée de vie théorique:
   formule: 7
   unité: an
 acv . écran . consommation en mode actif:
-  formule: 30
+  formule: 31
   unité: W
 acv . écran . profil utilisation théorique:
   formule: 3.45
   unité: h/jour
 acv . écran . consommation annuelle:
+  formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
+  unité: kWh/an
+
+acv . écran pro:
+  titre: Ecran d'ordinateur professionnel
+  description: |
+    Ecran d'ordinateur - moyen
+acv . écran pro . carbone:
+acv . écran pro . eau:
+
+acv . écran pro . carbone . fabrication:
+  formule: écran . carbone . fabrication
+  unité: gCO2e
+acv . écran pro . eau . fabrication:
+  formule: écran . eau . fabrication
+  unité: l
+acv . écran pro . carbone . distribution:
+  formule: écran . carbone . distribution
+  unité: gCO2e
+acv . écran pro . eau . distribution:
+  formule: écran . eau . distribution
+  unité: l
+acv . écran pro . carbone . usage théorique:
+  formule: consommation annuelle * publicodes-commun . mix électrique . empreinte carbone * 1000 gCO2e/kgCO2e * durée de vie théorique
+  unité: gCO2e
+acv . écran pro . carbone . fin de vie:
+  formule: écran . carbone . fin de vie
+  unité: gCO2e
+acv . écran pro . eau . fin de vie:
+  formule: écran . eau . fin de vie
+  unité: l
+  note: Selon le service Numérique ADEME, les données de la fin de vie pour l'indicateur eau ne sont pas fiables.
+acv . écran pro . durée de vie théorique:
+  formule: écran . durée de vie théorique
+  unité: an
+acv . écran pro . consommation en mode actif:
+  formule: écran . consommation en mode actif
+  unité: W
+acv . écran pro . profil utilisation théorique:
+  formule: 6
+  unité: h/jour
+acv . écran pro . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh
   unité: kWh/an
 

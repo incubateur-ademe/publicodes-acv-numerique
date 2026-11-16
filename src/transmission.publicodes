@@ -21,12 +21,12 @@ transmission par défaut . facteur réseau:
   unité: gCO2e/Go
 
 transmission par défaut . facteur réseau fixe:
-  formule: 0.956370508
+  formule: 0.602896198662482
   unité: gCO2e/Go
   note: Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
 
 transmission par défaut . facteur réseau mobile:
-  formule: 9.571624339
+  formule: 10.3707336859031
   unité: gCO2e/Go
   note: Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
 
@@ -63,13 +63,13 @@ transmission par défaut . facteur horaire abonnement:
   unité: gCO2e/h
 
 transmission par défaut . facteur horaire abonnement fixe:
-  formule: 5.117087337
+  formule: 2.87065574727589
   unité: gCO2e/h
   note: |
     Étude ADEME 2024, "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#
 
 transmission par défaut . facteur horaire abonnement mobile:
-  formule: 7.031758714
+  formule: 2.54342559484096
   unité: gCO2e/h
   note: |
     Étude ADEME 2024 "Etude de l'impact environnemental des usages audiovisuels en France" https://librairie.ademe.fr/economie-circulaire-et-dechets/7667-etude-de-l-impact-environnemental-des-usages-audiovisuels-en-france.html#

@@ -34,6 +34,6 @@ describe("Envoi d'un fichier", () => {
       réseau: "mobile",
     });
     const result = engine.evaluate("fichier");
-    expect(result.nodeValue).toBeCloseTo(11.38, 0);
+    expect(result.nodeValue).toBeCloseTo(12.49, 0);
   });
 });

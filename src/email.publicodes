@@ -10,6 +10,7 @@ email:
             - email . terminaux
             - email . transmission
             - email . data center
+            - email . redondances sauvegarde
       - sinon: 0 gCO2e
   unité: gCO2e
 
@@ -22,6 +23,12 @@ email . taille:
 email . taille en Go:
   formule: email . taille / 1000 Mo/Go
   unité: Go
+
+email . temps téléchargement:
+  formule: email . taille en Go / transmission par défaut . débit
+  unité: h
+  contexte:
+    transmission par défaut . réseau par défaut: email . réseau
 
 email . destinataires:
   titre: Nombre de destinataires
@@ -40,13 +47,13 @@ email . durée stockage récepteur:
   unité: an
   note: Hypothèse raisonnable ADEME, configurateur Mail.
 
-# email . redondances sauvegarde émetteur:
-#   titre: Nombre de redondances de sauvegarde côté émetteur
-#   valeur: 3
+email . redondances sauvegarde émetteur:
+  titre: Nombre de redondances de sauvegarde côté émetteur
+  valeur: 3
 
-# email . redondances sauvegarde récepteur:
-#   titre: Nombre de redondances de sauvegarde côté récepteur
-#   valeur: 3
+email . redondances sauvegarde récepteur:
+  titre: Nombre de redondances de sauvegarde côté récepteur
+  valeur: 3
 
 email . taux moyen de remplissage du stockage:
   titre: Taux moyen de remplissage du stockage
@@ -170,14 +177,14 @@ email . transmission:
 email . transmission . émetteur:
   valeur: transmission par défaut
   contexte:
-    transmission par défaut . taille par défaut: email . taille en Go * email . destinataires
+    transmission par défaut . taille par défaut: email . taille en Go
     transmission par défaut . réseau par défaut: email . réseau
   unité: gCO2e
 
 email . transmission . récepteur:
   valeur: transmission par défaut
   contexte:
-    transmission par défaut . taille par défaut: email . destinataires * email . taille en Go
+    transmission par défaut . taille par défaut: email . taille en Go * email . destinataires
     transmission par défaut . réseau par défaut: email . réseau
   unité: gCO2e
 
@@ -196,11 +203,19 @@ email . data center:
 email . data center . émetteur:
   valeur: data center par défaut
   contexte:
-    data center par défaut . taille par défaut: email . destinataires * email . taille en Go
+    data center par défaut . taille par défaut: email . taille en Go
+    data center par défaut . durée sollicitation par défaut: (email . terminaux . temps écriture en h + email . temps téléchargement)
   unité: gCO2e
 
 email . data center . récepteur:
   valeur: data center par défaut
   contexte:
     data center par défaut . taille par défaut: email . destinataires * email . taille en Go
+    data center par défaut . durée sollicitation par défaut: email . terminaux . temps lecture en h + email . temps téléchargement * email . destinataires
+  unité: gCO2e
+
+email . redondances sauvegarde:
+  valeur: data center par défaut . cdn
+  contexte:
+    data center par défaut . taille par défaut: email . taille en Go * email . redondances sauvegarde émetteur + email . destinataires * email . taille en Go * email . redondances sauvegarde récepteur
   unité: gCO2e

@@ -36,7 +36,7 @@ fichier . appareil:
     - tablette
     - smartphone
     - moyenne
-  par défaut: "'moyenne'"
+  par défaut: "'ordinateur et écran'"
 
 fichier . appareil . moyenne utilisation ordinateur et écran:
   formule: 24%
@@ -109,4 +109,5 @@ fichier . data center:
   valeur: data center par défaut
   contexte:
     data center par défaut . taille par défaut: fichier . taille
+    data center par défaut . durée sollicitation par défaut: fichier . appareil . durée totale sollicitation
   unité: gCO2e

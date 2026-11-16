@@ -33,7 +33,7 @@ describe("Participation à une visioconférence", () => {
       réseau: "fixe",
     });
     const result = engine.evaluate("visio");
-    expect(result.nodeValue).toBeCloseTo(91.74, 0);
+    expect(result.nodeValue).toBeCloseTo(65.93, 0);
   });
 
   test("Participer à une visio de 1 heure en HD avec 2 appareils via une connexion mobile", () => {
@@ -44,6 +44,6 @@ describe("Participation à une visioconférence", () => {
       réseau: "mobile",
     });
     const result = engine.evaluate("visio");
-    expect(result.nodeValue).toBeCloseTo(147.26, 0);
+    expect(result.nodeValue).toBeCloseTo(123.88, 0);
   });
 });

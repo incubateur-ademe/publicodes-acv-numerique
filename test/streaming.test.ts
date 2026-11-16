@@ -29,7 +29,7 @@ describe("Visionnage d'une vidéo en streaming", () => {
       réseau: "fixe",
     });
     const result = engine.evaluate("streaming");
-    expect(result.nodeValue).toBeCloseTo(66.49, 0);
+    expect(result.nodeValue).toBeCloseTo(61.45, 0);
   });
 
   test("Regarder 1 heure de streaming en HD via une connexion mobile", () => {
@@ -39,6 +39,6 @@ describe("Visionnage d'une vidéo en streaming", () => {
       réseau: "mobile",
     });
     const result = engine.evaluate("streaming");
-    expect(result.nodeValue).toBeCloseTo(94.25, 0);
+    expect(result.nodeValue).toBeCloseTo(90.43, 0);
   });
 });

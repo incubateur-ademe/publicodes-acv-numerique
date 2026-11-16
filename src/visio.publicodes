@@ -162,4 +162,5 @@ visio . data center:
   valeur: data center par défaut
   contexte:
     data center par défaut . taille par défaut: visio . emplacements * visio . taille
+    data center par défaut . durée sollicitation par défaut: visio . emplacements * visio . durée en heure
   unité: gCO2e
