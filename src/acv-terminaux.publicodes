@@ -127,7 +127,7 @@ acv . ordinateur portable . consommation en mode actif:
   unité: W
 acv . ordinateur portable . profil utilisation théorique:
   description: Usage personnel
-  formule: 3.45
+  formule: 2.42
   unité: h/jour
 acv . ordinateur portable . consommation annuelle:
   formule: consommation en mode actif * profil utilisation théorique * publicodes-commun . jours par an / 1000 W.h/kWh

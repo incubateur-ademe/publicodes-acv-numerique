@@ -32,7 +32,7 @@ describe("Envoi d'un mail", () => {
       réseau: "fixe",
     });
     const result = engine.evaluate("email");
-    expect(result.nodeValue).toBeCloseTo(2.42, 0);
+    expect(result.nodeValue).toBeCloseTo(2.58, 0);
   });
 
   test("Rédiger, envoyer et lire 1 mail de 1Mo (pièce jointe) à 5 destinataires via une connexion mobile", () => {
@@ -43,7 +43,7 @@ describe("Envoi d'un mail", () => {
     });
     const result = engine.evaluate("email");
 
-    expect(result.nodeValue).toBeCloseTo(2.48, 0);
+    expect(result.nodeValue).toBeCloseTo(2.64, 0);
   });
 
   test.each([
@@ -59,7 +59,7 @@ describe("Envoi d'un mail", () => {
       appareil: "ordinateur portable",
       taille: 1,
       destinataires: 4,
-      attendu: 1.6396671276955772,
+      attendu: 2.2757030435163,
     },
     {
       réseau: "fixe",
@@ -80,7 +80,7 @@ describe("Envoi d'un mail", () => {
       appareil: "moyenne",
       taille: 1.75,
       destinataires: 10,
-      attendu: 2.9892356784840546,
+      attendu: 3.1841945135508407,
     },
     {
       réseau: "mobile",
@@ -94,7 +94,7 @@ describe("Envoi d'un mail", () => {
       appareil: "ordinateur portable",
       taille: 2.25,
       destinataires: 14,
-      attendu: 2.8079605156859784,
+      attendu: 3.7378173708804048,
     },
     {
       réseau: "mobile",
@@ -115,7 +115,7 @@ describe("Envoi d'un mail", () => {
       appareil: "moyenne",
       taille: 3,
       destinataires: 20,
-      attendu: 4.799354971376803,
+      attendu: 5.064830831893278,
     },
   ])(
     "Rédiger, envoyer et lire un mail de $taille Mo à $destinataires destinataires via une connexion $réseau sur $appareil",

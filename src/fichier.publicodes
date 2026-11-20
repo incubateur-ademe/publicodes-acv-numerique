@@ -36,7 +36,7 @@ fichier . appareil:
     - tablette
     - smartphone
     - moyenne
-  par défaut: "'ordinateur et écran'"
+  par défaut: "'moyenne'"
 
 fichier . appareil . moyenne utilisation ordinateur et écran:
   formule: 24%
